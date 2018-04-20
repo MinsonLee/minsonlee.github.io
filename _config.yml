@@ -1,0 +1,69 @@
+# Basic
+title: MinsonLee
+subtitle: WebSite
+description: Welcome To My WebSite !
+# 头像里面的标题
+avatarTitle: Minson
+# 头像里面的描述
+avatarDesc: PHP / Git
+url: "https://minsonlee.github.io/"
+
+# Comment
+#comment:
+#    disqus: leopard
+    # uyan: 2143225  # 有言id,登录有言官网申请
+
+# Social
+social:
+    weibo: 2434729284 
+    github: MinsonLee
+    #twitter: lms.minsonlee@gmail.com
+    mail: lms.minsonlee@gmail.com
+
+# 百度统计 
+# 使用博客模板请去掉或者更换 id 
+#baidu:
+#    id: 8ba1c6be0953b6f9c2ba38e57f615421  
+
+# Google Analytics
+# 使用博客模板请去掉或者更换 id
+#ga:
+#    id: UA-84134159-3   
+#    host: auto  
+
+
+# 《----------------- 上面的信息修改成你自己的 ---------------------------》
+#
+#
+#  _post/ 下的文章更换成你自己的文章
+#  帮忙star一下，感谢~😆 地址： https://github.com/leopardpan/leopardpan.github.io
+#
+#
+# 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
+
+
+permalink: /:year/:month/:title/
+# Format
+highlighter: rouge
+
+textColor: #FF0000
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: clear
+
+# The blog button should not be removed.
+blog_button:
+    title: HomePage
+
+# Navigation buttons in the front page.s
+nav:
+    - {title: Article, description: archive, url: '/archive'}   
+    - {title: Tags, description: tags, url: '/tags'}      
+    - {title: About Me, description: about, url: '/about'}      
+    
+
+# Pagination
+gems: [jekyll-paginate,jekyll-sitemap]
+paginate: 20
+paginate_path: "page/:num/"
+
