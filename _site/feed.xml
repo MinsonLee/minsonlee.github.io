@@ -5,96 +5,100 @@
     <description>Welcome To My WebSite !</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 20 Apr 2018 11:33:43 +0800</pubDate>
-    <lastBuildDate>Fri, 20 Apr 2018 11:33:43 +0800</lastBuildDate>
+    <pubDate>Mon, 23 Apr 2018 23:42:16 +0800</pubDate>
+    <lastBuildDate>Mon, 23 Apr 2018 23:42:16 +0800</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
-        <title>Git教程</title>
-        <description>&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
-
-&lt;p&gt;　　Git是做项目的版本管理，你也可以称它们为版本管理工具。假如现在你有一个文件夹，里面可以是项目，也可以是你的个人笔记(如我这个博客)，或者是你的简历、毕业设计等等，都可以使用git来管理。&lt;/p&gt;
-
-&lt;p&gt;　　目前常用的版本控制器有Git和SVN，即使这两个你没有全用过，至少也会听过，我这里以Git为例，个人比较喜欢Git，你也可以看看这篇文章：&lt;a href=&quot;http://www.worldhello.net/2012/04/12/why-git-is-better-than-svn.html&quot;&gt;为什么Git比SVN好&lt;/a&gt;。我使用的是Mac，Mac上没自带Git环境，但是作为iOS开发者，我安装Xcode的时候，Xcode里是有自带Git的，所以我不需要考虑怎么去安装Git了。&lt;/p&gt;
-
-&lt;h3 id=&quot;安装git&quot;&gt;安装Git&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;在Mac OS X上安装Git&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;提供两种方法参考：&lt;/p&gt;
-
+        <title>00.Git问世</title>
+        <description>&lt;h2 id=&quot;1什么是版本控制&quot;&gt;1.什么是”版本控制”？&lt;/h2&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;1、通过homebrew安装Git，具体方法请参考&lt;a href=&quot;http://brew.sh/&quot;&gt;homebrew的文档&lt;/a&gt;    &lt;br /&gt;
-2、直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode。&lt;/p&gt;
+  &lt;p&gt;确保不同人所编辑的同一东西能集体得到更新，并在必要时候可以对没一个修改状态进行：查看、恢复&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;在Windows上安装Git&lt;/strong&gt;&lt;/p&gt;
-
+&lt;h2 id=&quot;2为什么会有版本控制系统&quot;&gt;2.为什么会有”版本控制系统”?&lt;/h2&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;从&lt;a href=&quot;https://git-for-windows.github.io&quot;&gt;https://git-for-windows.github.io&lt;/a&gt; 下载，然后按默认选项安装即可，安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;“工具”的产生都是为了解决”生产”上的烦恼&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;配置git&quot;&gt;配置Git&lt;/h3&gt;
-
-&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;你可以想象一下现在你要写“毕业论文”或者你老板叫你改一个“还没有拿定主意”的设计稿？你可能会频繁修改很多个版本，修改过程中你会频繁的：删除、修改、增加，你也不确定到底最终那个版本会是你需要的？你要怎么做？
+    &lt;ul&gt;
+      &lt;li&gt;每一个版本都复制一份完整的”资料”，或者把每个版本之间的差异都记录保存起来就可以了！&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;保存版本太多了，你怎么知道自己保存的东西到底是什么呢？
+    &lt;ul&gt;
+      &lt;li&gt;你可以再回过头去看每一个版本的”资料”,或者在命名的时候定义一个”完美”的规则,你能够通俗易懂的规则&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;如果是有很多个人和你一起完成手里的工作呢？如何防止命名的重复？如何防止相互修改的东西进行覆盖了?……
+    &lt;ul&gt;
+      &lt;li&gt;各自复制+重命名版本号：名字混乱(起名字真的很难起)、被覆盖了就”完蛋”了、不能协作&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;blockquote&gt;
+  &lt;p&gt;你所能想到的问题，肯定是有方法可以解决的！但是如果有一个工具可以帮你完成以上的问题，何乐而不为呢？i&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;3版本系统的几个重要代表和节点&quot;&gt;3.版本系统的几个重要”代表”和”节点”&lt;/h2&gt;
+&lt;h3 id=&quot;1-本地版本系统rcs&quot;&gt;1. 本地版本系统:RCS&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;解决了当时的需求，但是随着需求的复杂，缺点也突显出来了&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;类似”系统补丁”，在硬盘上保存”差集”，回退时进行大量计算比较得出不同&lt;/li&gt;
+  &lt;li&gt;不能协作，个人电脑容易”犯傻”，遇到了问题：如何让不同人在不同系统上的开发者协同工作？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2集中式版本管理cvssvncvs的进阶产品&quot;&gt;2.集中式版本管理:CVS、SVN(CVS的进阶产品)&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;解决了本地版本系统遗留的问题,但是随着时间推移,现在缺点也逐渐突显出来了,尽管还有比较多企业在用着SVN&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;有一个单一的集中管理的服务器，保存所有文件的修订版本与版本之间的差异&lt;/li&gt;
+  &lt;li&gt;协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新&lt;/li&gt;
+  &lt;li&gt;需要回退版本或者跟新时候,工具通过算法回溯的去计算,恢复到指定版本状态的”资料”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;但是如果”中心服务器”宕机了,那么意味着所有人都不能拉取、更新、比较历史版本差异…..,所有人都要停下等中心机器恢复工作！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;3分布式版本管理gitbazaar&quot;&gt;3.分布式版本管理:Git、Bazaar&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;尽管这一点不是所有分布式版本管理工具的特征,但这是绝大多书分布式管理工具共有的方式,&lt;/li&gt;
+  &lt;li&gt;分布式客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;将整个仓库克隆下来，那么就不怕任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复&lt;/li&gt;
+    &lt;li&gt;许多这类系统都可以指定和若干不同的远端代码仓库进行交互,当需要的时候才进行推送,不需要推送的时候你可以照常在本地进行代码:比较差异、分支切换、检出历史版本代码……&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;4为什么会有git&quot;&gt;4.为什么会有”Git”?&lt;/h2&gt;
+&lt;p&gt;因为2005年，BitKeeper的商业公司与Linux内核开源社区的合作关系结束，Linux之父一气之下开发了自己的版本控制系统，虽然网上说了很多种，但是不管到底那个才是正确的，最后要求设计出来的版本控制系统满足以下要求：&lt;/p&gt;
+&lt;blockquote&gt;
+
   &lt;ul&gt;
-    &lt;li&gt;$ git config –global user.name “Your Name”&lt;/li&gt;
-    &lt;li&gt;$ git config –global user.email “email@example.com”&lt;/li&gt;
+    &lt;li&gt;速度&lt;/li&gt;
+    &lt;li&gt;安全&lt;/li&gt;
+    &lt;li&gt;简单的设计&lt;/li&gt;
+    &lt;li&gt;对非线性开发模式的强力支持(允许成千上万的分支并行开发)&lt;/li&gt;
+    &lt;li&gt;完全分布式&lt;/li&gt;
+    &lt;li&gt;有能力高效的管理类似Linux内核一样的超大规模项目(速度与数据量)&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;“Your Name”： 是每次提交时所显示的用户名，因为Git是分布式版本控制系统，当我们push到远端时，就需要区分每个提交记录具体是谁提交的，这个”Your Name”就是最好的区分。&lt;/p&gt;
-
-&lt;p&gt;“email@example.com”： 是你远端仓库的email&lt;/p&gt;
-
-&lt;p&gt;–global：用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然我们也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
-
-&lt;h3 id=&quot;开始使用-建立仓库&quot;&gt;开始使用-建立仓库：&lt;/h3&gt;
-
-&lt;p&gt;你在目标文件夹下使命令：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;git init  （创建.git文件）&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;就会创建一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;.git&lt;/code&gt; 隐藏文件，相当于已经建立了一个本地仓库。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;添加到暂存区：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;git add .   （全部添加到暂存区）&lt;/li&gt;
-    &lt;li&gt;git commit -m ‘ first commit’  （提交暂存区的记录到本地仓库）&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;其它&quot;&gt;其它&lt;/h3&gt;
-
-&lt;p&gt;git branc 查看时如出现&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;(HEAD detached at analytics_v2)&lt;/li&gt;
-    &lt;li&gt;dev&lt;/li&gt;
-    &lt;li&gt;master&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;代表现在已经进入一个临时的HEAD，可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout -b temp&lt;/code&gt; 创建一个 temp branch，这样临时HEAD上修改的东西就不会被丢掉了。
-然后切换到 dev 分支上，在使用 git branch merge temp，就可以把 temp 分支上的代码合并到 dev 上了。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;转载自：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/07/GitTutorial/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
-
 </description>
-        <pubDate>Fri, 20 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/GitTutorial/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/GitTutorial/</guid>
+        <pubDate>Mon, 23 Apr 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</guid>
         
         <category>Git</category>
         
