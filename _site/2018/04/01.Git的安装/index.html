@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>00.Git问世</title>
-  <meta name="description" content="1.什么是”版本控制”？  确保不同人所编辑的同一东西能集体得到更新，并在必要时候可以对没一个修改状态进行：查看、恢复">
+  <title>01.Git的安装</title>
+  <meta name="description" content="1. 写在前面的话  下载地址：Git官网  参考资料：Pro Git">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="00.Git问世">
-  <meta name="twitter:description" content="1.什么是”版本控制”？  确保不同人所编辑的同一东西能集体得到更新，并在必要时候可以对没一个修改状态进行：查看、恢复">
+  <meta name="twitter:title" content="01.Git的安装">
+  <meta name="twitter:description" content="1. 写在前面的话  下载地址：Git官网  参考资料：Pro Git">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="00.Git问世">
-  <meta property="og:description" content="1.什么是”版本控制”？  确保不同人所编辑的同一东西能集体得到更新，并在必要时候可以对没一个修改状态进行：查看、恢复">
+  <meta property="og:title" content="01.Git的安装">
+  <meta property="og:description" content="1. 写在前面的话  下载地址：Git官网  参考资料：Pro Git">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/">
+  <link rel="canonical" href="http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/">
   <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -156,10 +156,10 @@
         <div class="content-wrapper__inner">
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">00.Git问世</h1>
+    <h1 class="post-title">01.Git的安装</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2018-04-23 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-04-23</time>  
+      <time datetime="2018-04-24 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-04-24</time>  
          
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -167,90 +167,89 @@
   </header>
 
   <section class="post">
-    <h2 id="1什么是版本控制">1.什么是”版本控制”？</h2>
+    <h2 id="1-写在前面的话">1. 写在前面的话</h2>
+<ul>
+  <li><strong>下载地址：</strong><a href="https://git-scm.com/">Git官网</a></li>
+  <li><strong>参考资料：</strong><a href="https://git-scm.com/book/zh/v2">Pro Git</a></li>
+</ul>
+
 <blockquote>
-  <p>确保不同人所编辑的同一东西能集体得到更新，并在必要时候可以对没一个修改状态进行：查看、恢复</p>
+  <p>这里只介绍最简单的安装方法,本系列的重点不在”安装”,如果你连Git的安装都不会,就先学最简单的并学会使用再去深究什么源码编译安装啥的吧！！！</p>
 </blockquote>
 
-<h2 id="2为什么会有版本控制系统">2.为什么会有”版本控制系统”?</h2>
+<h2 id="2-在linux下安装git">2. 在Linux下安装Git</h2>
 <blockquote>
-  <p><strong>“工具”的产生都是为了解决”生产”上的烦恼</strong></p>
+  <p>查看一下当前系统是否已经安装git:<code class="highlighter-rouge">git --version</code>,如果没版本信息即系统没有附带默认安装</p>
 </blockquote>
 
+<h3 id="2-1-包管理工具直接安装">2-1). 包管理工具直接安装</h3>
+<p>如果你是在CentOS/Fedora上安装,可以直接使用yum:</p>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo yum install git
+</code></pre>
+</div>
+<p>如果是在基于Debian发行版上,尝试用apt-get:</p>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo apt-get install git
+</code></pre>
+</div>
+<blockquote>
+  <ul>
+    <li>如果全都不想在安装过程中修改任何东西,请直接在以上安装命令后方加上 -y 参数</li>
+    <li>想了解更多Unix风格系统使用安装工具安装Git的,可以点击<a href="http://git-scm.com/download/linux">传送门</a></li>
+  </ul>
+</blockquote>
+
+<h3 id="2-2-源码编译安装">2-2). 源码编译安装</h3>
 <ol>
-  <li>你可以想象一下现在你要写“毕业论文”或者你老板叫你改一个“还没有拿定主意”的设计稿？你可能会频繁修改很多个版本，修改过程中你会频繁的：删除、修改、增加，你也不确定到底最终那个版本会是你需要的？你要怎么做？
-    <ul>
-      <li>每一个版本都复制一份完整的”资料”，或者把每个版本之间的差异都记录保存起来就可以了！</li>
-    </ul>
+  <li>找到你自己想安装的版本:<a href="https://mirrors.edge.kernel.org/pub/software/scm/git/">https://mirrors.edge.kernel.org/pub/software/scm/git/</a></li>
+  <li>下载源码
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>wget -P &lt;path&gt; url/xxx.tar.gz <span class="c"># 下载你需要安装版本的tar包到指定目录[建议统一规范存放你电脑中下载的tar包]</span>
+</code></pre>
+    </div>
   </li>
-  <li>保存版本太多了，你怎么知道自己保存的东西到底是什么呢？
-    <ul>
-      <li>你可以再回过头去看每一个版本的”资料”,或者在命名的时候定义一个”完美”的规则,你能够通俗易懂的规则</li>
-    </ul>
+  <li>解压
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>tar -zxvf xxx.tar.gz -C &lt;path&gt; <span class="c"># 解压安装包到指定目录[同样建议规范统一存放]</span>
+<span class="gp">$ </span><span class="nb">cd</span> &lt;path/git-xxx&gt; <span class="c"># 进入解压后的目录</span>
+</code></pre>
+    </div>
   </li>
-  <li>如果是有很多个人和你一起完成手里的工作呢？如何防止命名的重复？如何防止相互修改的东西进行覆盖了?……
-    <ul>
-      <li>各自复制+重命名版本号：名字混乱(起名字真的很难起)、被覆盖了就”完蛋”了、不能协作</li>
-    </ul>
+  <li>设置安装配置
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>./configure --prefix<span class="o">=</span>/你想安装到什么位置去
+</code></pre>
+    </div>
+  </li>
+  <li>安装
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>make <span class="o">&amp;&amp;</span> make install
+</code></pre>
+    </div>
+  </li>
+  <li>设置环境变量
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ echo "export PATH=$PATH:/git安装目录bin所在绝对路径"&gt;&gt;/etc/bashrc # 还有其他的方式可以设置,自定百度
+$ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
+</code></pre>
+    </div>
+  </li>
+  <li>验证是否安装成功
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git --version <span class="c"># 有版本信息则证明安装成功</span>
+</code></pre>
+    </div>
   </li>
 </ol>
 
-<blockquote>
-  <p>你所能想到的问题，肯定是有方法可以解决的！但是如果有一个工具可以帮你完成以上的问题，何乐而不为呢？i</p>
-</blockquote>
-
-<h2 id="3版本系统的几个重要代表和节点">3.版本系统的几个重要”代表”和”节点”</h2>
-<h3 id="1-本地版本系统rcs">1. 本地版本系统:RCS</h3>
-<blockquote>
-  <p>解决了当时的需求，但是随着需求的复杂，缺点也突显出来了</p>
-</blockquote>
-
-<ul>
-  <li>类似”系统补丁”，在硬盘上保存”差集”，回退时进行大量计算比较得出不同</li>
-  <li>不能协作，个人电脑容易”犯傻”，遇到了问题：如何让不同人在不同系统上的开发者协同工作？</li>
-</ul>
-
-<h3 id="2集中式版本管理cvssvncvs的进阶产品">2.集中式版本管理:CVS、SVN(CVS的进阶产品)</h3>
-<blockquote>
-  <p>解决了本地版本系统遗留的问题,但是随着时间推移,现在缺点也逐渐突显出来了,尽管还有比较多企业在用着SVN</p>
-</blockquote>
-
-<ul>
-  <li>有一个单一的集中管理的服务器，保存所有文件的修订版本与版本之间的差异</li>
-  <li>协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新</li>
-  <li>需要回退版本或者跟新时候,工具通过算法回溯的去计算,恢复到指定版本状态的”资料”</li>
-</ul>
+<h2 id="3-在mac下安装git">3. 在Mac下安装Git</h2>
+<ol>
+  <li>下载Git:<a href="http://git-scm.com/download/mac">http://git-scm.com/download/mac</a></li>
+  <li>傻瓜式安装法</li>
+</ol>
 
 <blockquote>
-  <p>但是如果”中心服务器”宕机了,那么意味着所有人都不能拉取、更新、比较历史版本差异…..,所有人都要停下等中心机器恢复工作！</p>
+  <p>人穷没在Mac上安装过,如果客官用的是苹果自行百度一下吧,觉得本文有用顺便请打赏一下,哈哈哈～</p>
 </blockquote>
 
-<h3 id="3分布式版本管理gitbazaar">3.分布式版本管理:Git、Bazaar</h3>
-<ul>
-  <li>尽管这一点不是所有分布式版本管理工具的特征,但这是绝大多书分布式管理工具共有的方式,</li>
-  <li>分布式客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来</li>
-</ul>
-
-<blockquote>
-  <ol>
-    <li>将整个仓库克隆下来，那么就不怕任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复</li>
-    <li>许多这类系统都可以指定和若干不同的远端代码仓库进行交互,当需要的时候才进行推送,不需要推送的时候你可以照常在本地进行代码:比较差异、分支切换、检出历史版本代码……</li>
-  </ol>
-</blockquote>
-
-<h2 id="4为什么会有git">4.为什么会有”Git”?</h2>
-<p>因为2005年，BitKeeper的商业公司与Linux内核开源社区的合作关系结束，Linux之父一气之下开发了自己的版本控制系统，虽然网上说了很多种，但是不管到底那个才是正确的，最后要求设计出来的版本控制系统满足以下要求：</p>
-<blockquote>
-
-  <ul>
-    <li>速度</li>
-    <li>安全</li>
-    <li>简单的设计</li>
-    <li>对非线性开发模式的强力支持(允许成千上万的分支并行开发)</li>
-    <li>完全分布式</li>
-    <li>有能力高效的管理类似Linux内核一样的超大规模项目(速度与数据量)</li>
-  </ul>
-</blockquote>
+<h2 id="4-在windows下安装git">4. 在Windows下安装Git</h2>
+<ol>
+  <li>点击<a href="https://git-scm.com/download/win">此处</a>下载Git</li>
+  <li>“傻瓜式下一步安装法”安装即可！</li>
+</ol>
 
 
   </section>
@@ -320,11 +319,11 @@
 
        <ul class="pager">
         
-        
-        <li class="next">
-            <a href="/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/" data-toggle="tooltip" data-placement="top" title="01.Git的安装">下一篇：  <span>01.Git的安装</span>
+        <li class="previous">
+            <a href="/2018/04/00.Git%E9%97%AE%E4%B8%96/" data-toggle="tooltip" data-placement="top" title="00.Git问世">上一篇：  <span>00.Git问世</span>
             </a>
         </li>
+        
         
     </ul>
 </section>

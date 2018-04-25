@@ -5,9 +5,104 @@
     <description>Welcome To My WebSite !</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Apr 2018 23:42:16 +0800</pubDate>
-    <lastBuildDate>Mon, 23 Apr 2018 23:42:16 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Apr 2018 08:37:26 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Apr 2018 08:37:26 +0800</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>01.Git的安装</title>
+        <description>&lt;h2 id=&quot;1-写在前面的话&quot;&gt;1. 写在前面的话&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;下载地址：&lt;/strong&gt;&lt;a href=&quot;https://git-scm.com/&quot;&gt;Git官网&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;参考资料：&lt;/strong&gt;&lt;a href=&quot;https://git-scm.com/book/zh/v2&quot;&gt;Pro Git&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这里只介绍最简单的安装方法,本系列的重点不在”安装”,如果你连Git的安装都不会,就先学最简单的并学会使用再去深究什么源码编译安装啥的吧！！！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-在linux下安装git&quot;&gt;2. 在Linux下安装Git&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;查看一下当前系统是否已经安装git:&lt;code class=&quot;highlighter-rouge&quot;&gt;git --version&lt;/code&gt;,如果没版本信息即系统没有附带默认安装&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;2-1-包管理工具直接安装&quot;&gt;2-1). 包管理工具直接安装&lt;/h3&gt;
+&lt;p&gt;如果你是在CentOS/Fedora上安装,可以直接使用yum:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo yum install git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;如果是在基于Debian发行版上,尝试用apt-get:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;如果全都不想在安装过程中修改任何东西,请直接在以上安装命令后方加上 -y 参数&lt;/li&gt;
+    &lt;li&gt;想了解更多Unix风格系统使用安装工具安装Git的,可以点击&lt;a href=&quot;http://git-scm.com/download/linux&quot;&gt;传送门&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;2-2-源码编译安装&quot;&gt;2-2). 源码编译安装&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;找到你自己想安装的版本:&lt;a href=&quot;https://mirrors.edge.kernel.org/pub/software/scm/git/&quot;&gt;https://mirrors.edge.kernel.org/pub/software/scm/git/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;下载源码
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;wget -P &amp;lt;path&amp;gt; url/xxx.tar.gz &lt;span class=&quot;c&quot;&gt;# 下载你需要安装版本的tar包到指定目录[建议统一规范存放你电脑中下载的tar包]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;解压
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;tar -zxvf xxx.tar.gz -C &amp;lt;path&amp;gt; &lt;span class=&quot;c&quot;&gt;# 解压安装包到指定目录[同样建议规范统一存放]&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &amp;lt;path/git-xxx&amp;gt; &lt;span class=&quot;c&quot;&gt;# 进入解压后的目录&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;设置安装配置
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./configure --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/你想安装到什么位置去
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;设置环境变量
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo &quot;export PATH=$PATH:/git安装目录bin所在绝对路径&quot;&amp;gt;&amp;gt;/etc/bashrc # 还有其他的方式可以设置,自定百度
+$ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;验证是否安装成功
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git --version &lt;span class=&quot;c&quot;&gt;# 有版本信息则证明安装成功&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-在mac下安装git&quot;&gt;3. 在Mac下安装Git&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;下载Git:&lt;a href=&quot;http://git-scm.com/download/mac&quot;&gt;http://git-scm.com/download/mac&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;傻瓜式安装法&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;人穷没在Mac上安装过,如果客官用的是苹果自行百度一下吧,觉得本文有用顺便请打赏一下,哈哈哈～&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;4-在windows下安装git&quot;&gt;4. 在Windows下安装Git&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;点击&lt;a href=&quot;https://git-scm.com/download/win&quot;&gt;此处&lt;/a&gt;下载Git&lt;/li&gt;
+  &lt;li&gt;“傻瓜式下一步安装法”安装即可！&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 24 Apr 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+        
+        <category>Git</category>
+        
+        
+      </item>
     
       <item>
         <title>00.Git问世</title>
