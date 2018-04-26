@@ -5,9 +5,129 @@
     <description>Welcome To My WebSite !</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Apr 2018 01:43:49 +0800</pubDate>
-    <lastBuildDate>Thu, 26 Apr 2018 01:43:49 +0800</lastBuildDate>
-    <generator>Jekyll v3.5.2</generator>
+    <pubDate>Fri, 27 Apr 2018 00:32:49 +0800</pubDate>
+    <lastBuildDate>Fri, 27 Apr 2018 00:32:49 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>Thinking In EasyRentCars</title>
+        <description>&lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;what-are-you-thinking&quot;&gt;What are you thinking?&lt;/h2&gt;
+
+&lt;h3 id=&quot;自动化部署&quot;&gt;自动化部署&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;思考:当前公司使用vagrant进行本地自动化开发环境搭建,这个过程中遇到很多不爽的地方,哪:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;为什么我们会选择vagrant进行搭建本地开发呢?&lt;/li&gt;
+    &lt;li&gt;为什么没有选择Docker呢?vagrant与Docker的区别在什么地方呢?&lt;/li&gt;
+    &lt;li&gt;什么场景下去使用它们两者呢?它们的原理又是啥呢?&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;vagrant同步更新文件延缓问题?[插件:&lt;code class=&quot;highlighter-rouge&quot;&gt;vagrant-winnfsd-1.4.0.gem&lt;/code&gt;==&amp;gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vagrant plugin install /gem-path&lt;/code&gt;]&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://www.virtualbox.org/manual/&quot;&gt;如何使用VBoxManage加载box解决vagrant运行缓慢问题?&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Docker的深入了解&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;通过对vagrant的了解和学习发现”计算机网络”连一些基础知识都已经还给老师了?但是这很重要,抽时间整理、记录、深入学习?计算机四大原理:操作系统原理、编译原理、计算机组成原理、网络原理;线性代数;算法与数据结构&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;消息队列&quot;&gt;消息队列&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;思考:当前使用gearman做消息队列,做异步操作,并没有真正发挥消息队列的”作用”,虽然老大说gearman迟早要换,好奇:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;为啥当初要选型用gearman呢?&lt;/li&gt;
+    &lt;li&gt;gearman的劣势是什么?&lt;/li&gt;
+    &lt;li&gt;gearman的应用场景是啥?&lt;/li&gt;
+    &lt;li&gt;gearman相比MQ是不是真的没有可取之处?&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;消息队列的运用:①削峰–&amp;gt;es:秒杀活动&amp;lt;==&amp;gt;地铁拉闸限流;②业务解耦–&amp;gt;MQ,互联网架构解耦神器[寄信人和邮差的场景==&amp;gt;消费者];③异步&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;服务&quot;&gt;服务&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;思考:现在公司用到的一些服务,以前也是粗浅掌握,现在也是用公司封装的,是时候真正掌握和学习了解它们了&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;缓存服务&quot;&gt;缓存服务&lt;/h4&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Mamecache &amp;amp;&amp;amp; Mamecached&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Radis&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;MongoDB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;全文搜索服务&quot;&gt;全文搜索服务&lt;/h4&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;sphinx&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Elasticsearch搜索服务==&amp;gt;Elasticsearch是否可以代替Mongo成为搜索存储服务器?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;数据库服务&quot;&gt;数据库服务&lt;/h4&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;MySQL都出8啦…还不学习了解干嘛?&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;上一次帝明分享了MySQL的优化、慢查询的优化、索引的优化,整理深入学一下吧&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;公司大神们都推荐了《MySQL高性能》这本书,是不是该提上日程来看啦～&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;做了这么多次统计,自己踩了这多坑,看别人踩了这么多坑,该总结了吧?[select主键方式来代替count方案;使用一张临时表来存储定时执行记录:多批少量跑大表数据]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;编程思维&quot;&gt;编程思维&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;最近写代码脑子有点抽,抽空整理学习一下以下的知识吧&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;面向过程编程[你没看错,现在项目里还有一些古来代码还是这样写的,改也难改…但至少优雅点吧]&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;面向对象编程[兄台看框架源码去吧]&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;面向切面编程[兄台看框架源码去吧]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;php&quot;&gt;PHP&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;工作中发现掌握火候还不够的问题和知识点&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;opcache深入学习[以前只是知道有这个东西,但是没怎么深入了解过]&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;PHP生成器:&lt;a href=&quot;https://www.virtualbox.org/manual/&quot;&gt;①PHP生成器详解&lt;/a&gt; &lt;a href=&quot;https://www.virtualbox.org/manual/&quot;&gt;② 在PHP中使用协程实现多任务调度 
+&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Composer的深入了解学习与运用&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;工具&quot;&gt;工具&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;工具一直都有在用,但是随着工作和平时慢慢积累的一些好用的配置和设置该记录一下啦&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;PHPStrom主题设置;格式化代码设置;插架安装-Git&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;SublimeText3:主题设置;插件安装-GoAnyWhere&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;VIM:使用vim一开始真的只是装逼,装逼失败之后…发现原来这个东西真的是我用的所有编辑器里最不卡/最牛逼的&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Git:被运维哥哥(海明)怼过之后,潜心学习Git的使用,发现Git真的很棒,也学习到很多以前所不懂的,并与同事做了分享![感谢那些让你进步的人～]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;问题&quot;&gt;问题&lt;/h3&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;最近公司服务器一直CPU报警,消耗太高,如何排查CPU过高?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Apr 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/04/think-in-erc/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/think-in-erc/</guid>
+        
+        <category>Thinking</category>
+        
+        <category>EasyRentCars</category>
+        
+        
+      </item>
     
       <item>
         <title>02.Git与SVN的比较</title>
@@ -233,13 +353,11 @@ Commit号是在仓库中唯一:相比CVS(每个文件都有各自独立的版本
 
 &lt;h3 id=&quot;2-1-包管理工具直接安装&quot;&gt;2-1). 包管理工具直接安装&lt;/h3&gt;
 &lt;p&gt;如果你是在CentOS/Fedora上安装,可以直接使用yum:&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo yum install git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;如果是在基于Debian发行版上,尝试用apt-get:&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;如果全都不想在安装过程中修改任何东西,请直接在以上安装命令后方加上 -y 参数&lt;/li&gt;
@@ -251,36 +369,30 @@ Commit号是在仓库中唯一:相比CVS(每个文件都有各自独立的版本
 &lt;ol&gt;
   &lt;li&gt;找到你自己想安装的版本:&lt;a href=&quot;https://mirrors.edge.kernel.org/pub/software/scm/git/&quot;&gt;https://mirrors.edge.kernel.org/pub/software/scm/git/&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;下载源码
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;wget -P &amp;lt;path&amp;gt; url/xxx.tar.gz &lt;span class=&quot;c&quot;&gt;# 下载你需要安装版本的tar包到指定目录[建议统一规范存放你电脑中下载的tar包]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget &lt;span class=&quot;nt&quot;&gt;-P&lt;/span&gt; &amp;lt;path&amp;gt; url/xxx.tar.gz &lt;span class=&quot;c&quot;&gt;# 下载你需要安装版本的tar包到指定目录[建议统一规范存放你电脑中下载的tar包]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;解压
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;tar -zxvf xxx.tar.gz -C &amp;lt;path&amp;gt; &lt;span class=&quot;c&quot;&gt;# 解压安装包到指定目录[同样建议规范统一存放]&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &amp;lt;path/git-xxx&amp;gt; &lt;span class=&quot;c&quot;&gt;# 进入解压后的目录&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-zxvf&lt;/span&gt; xxx.tar.gz &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &amp;lt;path&amp;gt; &lt;span class=&quot;c&quot;&gt;# 解压安装包到指定目录[同样建议规范统一存放]&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &amp;lt;path/git-xxx&amp;gt; &lt;span class=&quot;c&quot;&gt;# 进入解压后的目录&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;设置安装配置
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./configure --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/你想安装到什么位置去
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./configure &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/你想安装到什么位置去
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;安装
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;设置环境变量
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo &quot;export PATH=$PATH:/git安装目录bin所在绝对路径&quot;&amp;gt;&amp;gt;/etc/bashrc # 还有其他的方式可以设置,自定百度
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo &quot;export PATH=$PATH:/git安装目录bin所在绝对路径&quot;&amp;gt;&amp;gt;/etc/bashrc # 还有其他的方式可以设置,自定百度
 $ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;验证是否安装成功
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git --version &lt;span class=&quot;c&quot;&gt;# 有版本信息则证明安装成功&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 有版本信息则证明安装成功&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -305,11 +417,17 @@ $ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
   &lt;p&gt;Git是为了进行”协同开发”而设计的版本控制系统,那在使用前你总要告诉Git最基本的信息吧:你是谁？出了问题如何才能联系到你?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;# 告诉Git:你是谁?
-$ git config --global user.name &quot;yourname&quot;
-# 告诉Git:你的联系方式?
-$ git config --global user.email &quot;youremail&quot;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;告诉Git:你是谁?&lt;/strong&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git config --global user.name &quot;yourname&quot;
 &lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;告诉Git:你的联系方式?&lt;/strong&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git config --global user.email &quot;youremail&quot;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;设置了以上最基本的信息之后,你已经可以正式开始使用Git了!&lt;/p&gt;
 &lt;/blockquote&gt;
