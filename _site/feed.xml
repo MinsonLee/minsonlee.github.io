@@ -3,10 +3,10 @@
   <channel>
     <title>MinsonLee</title>
     <description>Welcome To My WebSite !</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Apr 2018 08:39:21 +0800</pubDate>
-    <lastBuildDate>Fri, 27 Apr 2018 08:39:21 +0800</lastBuildDate>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 27 Apr 2018 15:39:25 +0800</pubDate>
+    <lastBuildDate>Fri, 27 Apr 2018 15:39:25 +0800</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
     
       <item>
@@ -51,8 +51,8 @@
 
 </description>
         <pubDate>Fri, 27 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/03.git-protocol/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/03.git-protocol/</guid>
+        <link>http://0.0.0.0:4000/2018/04/03.git-protocol/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/03.git-protocol/</guid>
         
         <category>Git</category>
         
@@ -161,16 +161,18 @@
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Git:被运维哥哥(海明)怼过之后,潜心学习Git的使用,发现Git真的很棒,也学习到很多以前所不懂的,并与同事做了分享![感谢那些让你进步的人～]&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;问题&quot;&gt;问题&lt;/h3&gt;
+&lt;h3 id=&quot;运维&quot;&gt;运维&lt;/h3&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;最近公司服务器一直CPU报警,消耗太高,如何排查CPU过高?&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;运维生成空间:&lt;a href=&quot;http://www.ttlsa.com&quot;&gt;http://www.ttlsa.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;数据恢复:&lt;a href=&quot;https://mp.weixin.qq.com/s/Ozqu2A7Sy_TGKkF6yF1rDQ&quot;&gt;https://mp.weixin.qq.com/s/Ozqu2A7Sy_TGKkF6yF1rDQ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 26 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/think-in-erc/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/think-in-erc/</guid>
+        <link>http://0.0.0.0:4000/2018/04/think-in-erc/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/think-in-erc/</guid>
         
         <category>Thinking</category>
         
@@ -380,8 +382,8 @@ Commit号是在仓库中唯一:相比CVS(每个文件都有各自独立的版本
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
+        <link>http://0.0.0.0:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
         
         <category>Git</category>
         
@@ -490,8 +492,8 @@ $ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
 
 </description>
         <pubDate>Tue, 24 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+        <link>http://0.0.0.0:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
         
         <category>Git</category>
         
@@ -597,8 +599,8 @@ $ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</guid>
+        <link>http://0.0.0.0:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</guid>
         
         <category>Git</category>
         

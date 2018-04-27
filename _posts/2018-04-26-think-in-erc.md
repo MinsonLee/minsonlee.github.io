@@ -72,7 +72,9 @@ tags: [Thinking,EasyRentCars]
 - [ ] VIM:使用vim一开始真的只是装逼,装逼失败之后...发现原来这个东西真的是我用的所有编辑器里最不卡/最牛逼的
 - [ ] Git:被运维哥哥(海明)怼过之后,潜心学习Git的使用,发现Git真的很棒,也学习到很多以前所不懂的,并与同事做了分享![感谢那些让你进步的人～]
 
-### 问题
+### 运维
 - [ ] 最近公司服务器一直CPU报警,消耗太高,如何排查CPU过高?
+- [ ] 运维生成空间:[http://www.ttlsa.com](http://www.ttlsa.com)
+- [ ] 数据恢复:[https://mp.weixin.qq.com/s/Ozqu2A7Sy_TGKkF6yF1rDQ](https://mp.weixin.qq.com/s/Ozqu2A7Sy_TGKkF6yF1rDQ)
 
 转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
