@@ -5,9 +5,59 @@
     <description>Welcome To My WebSite !</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Apr 2018 00:32:49 +0800</pubDate>
-    <lastBuildDate>Fri, 27 Apr 2018 00:32:49 +0800</lastBuildDate>
+    <pubDate>Fri, 27 Apr 2018 08:39:21 +0800</pubDate>
+    <lastBuildDate>Fri, 27 Apr 2018 08:39:21 +0800</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>03.浅谈Git的传输协议</title>
+        <description>&lt;h2 id=&quot;写在前面的话&quot;&gt;写在前面的话&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;如果你是初学Git,意在掌握它的基本使用!那么建议你先阅读本章:本地协议模块&lt;/li&gt;
+    &lt;li&gt;为什么把Git的协议篇放到前面来写呢?考虑到:
+      &lt;ul&gt;
+        &lt;li&gt;不是每个人都有Github或Gitlab,如果一开始学就要认人去申请这些东西,然后配置秘钥,创建仓库,可能很多人就死在这个路上了;&lt;/li&gt;
+        &lt;li&gt;先了解Git的内部支持那些协议可以让你更好的学习后续遇到的问题.例如:学习本地协议之后,你完全可以忽略以上所有问题,自己模拟在本地搭建”托管服务”然后学习绝大部分你看到的关于Git的操作资料;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-本地协议&quot;&gt;1. 本地协议&lt;/h2&gt;
+&lt;h3 id=&quot;什么是本地协议&quot;&gt;什么是本地协议?&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;你的操作系统[Windows/Linux]就是基于这个东西来访问的;例如:你保存了一个网页到本地,然后打开你保存的网页,你会看到浏览器打开的时候URL地址栏那个地方就是:&lt;code class=&quot;highlighter-rouge&quot;&gt;file:///home/xxxx/xxx.html&lt;/code&gt;,而&lt;code class=&quot;highlighter-rouge&quot;&gt;file://&lt;/code&gt;就是本地协议的协议头,可以理解为一个标志:告诉浏览器或Git我使用的是本地协议,你到我本地的&lt;code class=&quot;highlighter-rouge&quot;&gt;home/xxxx&lt;/code&gt;路径去找&lt;code class=&quot;highlighter-rouge&quot;&gt;xxx.html&lt;/code&gt;文件&lt;/li&gt;
+    &lt;li&gt;如果什么协议头都没打,直接/开头,Git会默认使用本地协议去你本地找,所以你可以在本地模拟一个类似Github或者Gitlab的仓库托管服务,然后开启你学习Git之路[下一章会告诉大家怎么去搭建,如果你刚刚开始学习Git,你可以直接跳去下一章进行学习了]&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-哑协议&quot;&gt;2. 哑协议&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;由于现在基本很少使用这种协议了,具体我也没使用过这个,这里只是总结官网上的文章,了解一下!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;3-智能协议&quot;&gt;3. 智能协议&lt;/h2&gt;
+
+&lt;h2 id=&quot;4-ssh协议&quot;&gt;4. SSH协议&lt;/h2&gt;
+
+&lt;h2 id=&quot;5-git协议&quot;&gt;5. git协议&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;参考文献:&lt;/strong&gt;
+《Git内部原理-传输协议》：&lt;a href=&quot;https://git-scm.com/book/zh/v2/Git-内部原理-传输协议&quot;&gt;https://git-scm.com/book/zh/v2/Git-内部原理-传输协议&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 27 Apr 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/04/03.git-protocol/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/03.git-protocol/</guid>
+        
+        <category>Git</category>
+        
+        
+      </item>
     
       <item>
         <title>Thinking In EasyRentCars</title>
@@ -131,10 +181,14 @@
     
       <item>
         <title>02.Git与SVN的比较</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;1.无意争执SVN和Git孰优孰劣,如有冒犯请忽略该文!
-2.文中设计个别操作命令,不懂可以直接跳过,明白意思即可,等学会操作Git之后,你真的想在此了解Git与SVN的时候你会再回来的看的!
-3.本文选择性的记录了参考文献中的部分重点,想深入了解者可&lt;a href=&quot;http://blog.sina.com.cn/s/blog_765348af0102uyo9.html&quot;&gt;阅读原文&lt;/a&gt;并自行实践!&lt;/p&gt;
+        <description>&lt;h2 id=&quot;写在前面的话&quot;&gt;写在前面的话&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;考虑到很多人或很多公司依然在用SVN,所以在介绍具体使用之前,翻阅资料总结了该文.&lt;/li&gt;
+    &lt;li&gt;目的是为了让大家对SVN和Git有个更好的认知,无意争执SVN和Git孰优孰劣,如有冒犯请忽略该文![工具那个都是用,选你合适的,学习流行的]&lt;/li&gt;
+    &lt;li&gt;文中设计个别操作命令,不懂可以直接跳过,明白意思即可,等学会操作Git之后,你真的想在此了解Git与SVN的时候你会再回来的看的!&lt;/li&gt;
+    &lt;li&gt;本文选择性的记录了参考文献中的部分重点,想深入了解者可&lt;a href=&quot;http://blog.sina.com.cn/s/blog_765348af0102uyo9.html&quot;&gt;阅读原文&lt;/a&gt;并自行实践!&lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;svn的优缺点&quot;&gt;SVN的优缺点&lt;/h2&gt;

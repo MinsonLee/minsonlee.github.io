@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>Thinking In EasyRentCars</title>
-  <meta name="description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
+  <title>03.浅谈Git的传输协议</title>
+  <meta name="description" content="写在前面的话      如果你是初学Git,意在掌握它的基本使用!那么建议你先阅读本章:本地协议模块    为什么把Git的协议篇放到前面来写呢?考虑到:              不是每个人都有Github或Gitlab,如果一开始学就要认人去申请这些东西,然后配置秘钥,创建仓库,可能很多人就死在这个路上了; ...">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Thinking In EasyRentCars">
-  <meta name="twitter:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
+  <meta name="twitter:title" content="03.浅谈Git的传输协议">
+  <meta name="twitter:description" content="写在前面的话      如果你是初学Git,意在掌握它的基本使用!那么建议你先阅读本章:本地协议模块    为什么把Git的协议篇放到前面来写呢?考虑到:              不是每个人都有Github或Gitlab,如果一开始学就要认人去申请这些东西,然后配置秘钥,创建仓库,可能很多人就死在这个路上了; ...">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Thinking In EasyRentCars">
-  <meta property="og:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
+  <meta property="og:title" content="03.浅谈Git的传输协议">
+  <meta property="og:description" content="写在前面的话      如果你是初学Git,意在掌握它的基本使用!那么建议你先阅读本章:本地协议模块    为什么把Git的协议篇放到前面来写呢?考虑到:              不是每个人都有Github或Gitlab,如果一开始学就要认人去申请这些东西,然后配置秘钥,创建仓库,可能很多人就死在这个路上了; ...">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2018/04/think-in-erc/">
+  <link rel="canonical" href="http://localhost:4000/2018/04/03.git-protocol/">
   <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -156,10 +156,10 @@
         <div class="content-wrapper__inner">
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">Thinking In EasyRentCars</h1>
+    <h1 class="post-title">03.浅谈Git的传输协议</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2018-04-26 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-04-26</time>  
+      <time datetime="2018-04-27 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-04-27</time>  
          
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -167,112 +167,44 @@
   </header>
 
   <section class="post">
-    <h2 id="背景">背景</h2>
+    <h2 id="写在前面的话">写在前面的话</h2>
 <blockquote>
-  <p>最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用</p>
+  <ol>
+    <li>如果你是初学Git,意在掌握它的基本使用!那么建议你先阅读本章:本地协议模块</li>
+    <li>为什么把Git的协议篇放到前面来写呢?考虑到:
+      <ul>
+        <li>不是每个人都有Github或Gitlab,如果一开始学就要认人去申请这些东西,然后配置秘钥,创建仓库,可能很多人就死在这个路上了;</li>
+        <li>先了解Git的内部支持那些协议可以让你更好的学习后续遇到的问题.例如:学习本地协议之后,你完全可以忽略以上所有问题,自己模拟在本地搭建”托管服务”然后学习绝大部分你看到的关于Git的操作资料;</li>
+      </ul>
+    </li>
+  </ol>
 </blockquote>
 
-<h2 id="what-are-you-thinking">What are you thinking?</h2>
-
-<h3 id="自动化部署">自动化部署</h3>
+<h2 id="1-本地协议">1. 本地协议</h2>
+<h3 id="什么是本地协议">什么是本地协议?</h3>
 <blockquote>
-  <p>思考:当前公司使用vagrant进行本地自动化开发环境搭建,这个过程中遇到很多不爽的地方,哪:</p>
   <ul>
-    <li>为什么我们会选择vagrant进行搭建本地开发呢?</li>
-    <li>为什么没有选择Docker呢?vagrant与Docker的区别在什么地方呢?</li>
-    <li>什么场景下去使用它们两者呢?它们的原理又是啥呢?</li>
+    <li>你的操作系统[Windows/Linux]就是基于这个东西来访问的;例如:你保存了一个网页到本地,然后打开你保存的网页,你会看到浏览器打开的时候URL地址栏那个地方就是:<code class="highlighter-rouge">file:///home/xxxx/xxx.html</code>,而<code class="highlighter-rouge">file://</code>就是本地协议的协议头,可以理解为一个标志:告诉浏览器或Git我使用的是本地协议,你到我本地的<code class="highlighter-rouge">home/xxxx</code>路径去找<code class="highlighter-rouge">xxx.html</code>文件</li>
+    <li>如果什么协议头都没打,直接/开头,Git会默认使用本地协议去你本地找,所以你可以在本地模拟一个类似Github或者Gitlab的仓库托管服务,然后开启你学习Git之路[下一章会告诉大家怎么去搭建,如果你刚刚开始学习Git,你可以直接跳去下一章进行学习了]</li>
   </ul>
 </blockquote>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />vagrant同步更新文件延缓问题?[插件:<code class="highlighter-rouge">vagrant-winnfsd-1.4.0.gem</code>==&gt;<code class="highlighter-rouge">vagrant plugin install /gem-path</code>]</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://www.virtualbox.org/manual/">如何使用VBoxManage加载box解决vagrant运行缓慢问题?</a></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Docker的深入了解</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />通过对vagrant的了解和学习发现”计算机网络”连一些基础知识都已经还给老师了?但是这很重要,抽时间整理、记录、深入学习?计算机四大原理:操作系统原理、编译原理、计算机组成原理、网络原理;线性代数;算法与数据结构</li>
-</ul>
-
-<h3 id="消息队列">消息队列</h3>
+<h2 id="2-哑协议">2. 哑协议</h2>
 <blockquote>
-  <p>思考:当前使用gearman做消息队列,做异步操作,并没有真正发挥消息队列的”作用”,虽然老大说gearman迟早要换,好奇:</p>
-  <ul>
-    <li>为啥当初要选型用gearman呢?</li>
-    <li>gearman的劣势是什么?</li>
-    <li>gearman的应用场景是啥?</li>
-    <li>gearman相比MQ是不是真的没有可取之处?</li>
-  </ul>
+  <p>由于现在基本很少使用这种协议了,具体我也没使用过这个,这里只是总结官网上的文章,了解一下!</p>
 </blockquote>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />消息队列的运用:①削峰–&gt;es:秒杀活动&lt;==&gt;地铁拉闸限流;②业务解耦–&gt;MQ,互联网架构解耦神器[寄信人和邮差的场景==&gt;消费者];③异步</li>
-</ul>
+<h2 id="3-智能协议">3. 智能协议</h2>
 
-<h3 id="服务">服务</h3>
-<blockquote>
-  <p>思考:现在公司用到的一些服务,以前也是粗浅掌握,现在也是用公司封装的,是时候真正掌握和学习了解它们了</p>
-</blockquote>
+<h2 id="4-ssh协议">4. SSH协议</h2>
 
-<h4 id="缓存服务">缓存服务</h4>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mamecache &amp;&amp; Mamecached</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Radis</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MongoDB</li>
-</ul>
+<h2 id="5-git协议">5. git协议</h2>
 
-<h4 id="全文搜索服务">全文搜索服务</h4>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />sphinx</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Elasticsearch搜索服务==&gt;Elasticsearch是否可以代替Mongo成为搜索存储服务器?</li>
-</ul>
-
-<h4 id="数据库服务">数据库服务</h4>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MySQL都出8啦…还不学习了解干嘛?</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />上一次帝明分享了MySQL的优化、慢查询的优化、索引的优化,整理深入学一下吧</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />公司大神们都推荐了《MySQL高性能》这本书,是不是该提上日程来看啦～</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />做了这么多次统计,自己踩了这多坑,看别人踩了这么多坑,该总结了吧?[select主键方式来代替count方案;使用一张临时表来存储定时执行记录:多批少量跑大表数据]</li>
-</ul>
-
-<h3 id="编程思维">编程思维</h3>
-<blockquote>
-  <p>最近写代码脑子有点抽,抽空整理学习一下以下的知识吧</p>
-</blockquote>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />面向过程编程[你没看错,现在项目里还有一些古来代码还是这样写的,改也难改…但至少优雅点吧]</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />面向对象编程[兄台看框架源码去吧]</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />面向切面编程[兄台看框架源码去吧]</li>
-</ul>
-
-<h3 id="php">PHP</h3>
-<blockquote>
-  <p>工作中发现掌握火候还不够的问题和知识点</p>
-</blockquote>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />opcache深入学习[以前只是知道有这个东西,但是没怎么深入了解过]</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />PHP生成器:<a href="https://www.virtualbox.org/manual/">①PHP生成器详解</a> <a href="https://www.virtualbox.org/manual/">② 在PHP中使用协程实现多任务调度 
-</a></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Composer的深入了解学习与运用</li>
-</ul>
-
-<h3 id="工具">工具</h3>
-<blockquote>
-  <p>工具一直都有在用,但是随着工作和平时慢慢积累的一些好用的配置和设置该记录一下啦</p>
-</blockquote>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />PHPStrom主题设置;格式化代码设置;插架安装-Git</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />SublimeText3:主题设置;插件安装-GoAnyWhere</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />VIM:使用vim一开始真的只是装逼,装逼失败之后…发现原来这个东西真的是我用的所有编辑器里最不卡/最牛逼的</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Git:被运维哥哥(海明)怼过之后,潜心学习Git的使用,发现Git真的很棒,也学习到很多以前所不懂的,并与同事做了分享![感谢那些让你进步的人～]</li>
-</ul>
-
-<h3 id="问题">问题</h3>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />最近公司服务器一直CPU报警,消耗太高,如何排查CPU过高?</li>
-</ul>
+<p><strong>参考文献:</strong>
+《Git内部原理-传输协议》：<a href="https://git-scm.com/book/zh/v2/Git-内部原理-传输协议">https://git-scm.com/book/zh/v2/Git-内部原理-传输协议</a></p>
 
 <p>转载请声明出处:<a href="https://minsonlee.github.io">MinsonLee的博客:https://minsonlee.github.io</a></p>
+
 
 
   </section>
@@ -343,15 +275,10 @@
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/" data-toggle="tooltip" data-placement="top" title="02.Git与SVN的比较">上一篇：  <span>02.Git与SVN的比较</span>
+            <a href="/2018/04/think-in-erc/" data-toggle="tooltip" data-placement="top" title="Thinking In EasyRentCars">上一篇：  <span>Thinking In EasyRentCars</span>
             </a>
         </li>
         
-        
-        <li class="next">
-            <a href="/2018/04/03.git-protocol/" data-toggle="tooltip" data-placement="top" title="03.浅谈Git的传输协议">下一篇：  <span>03.浅谈Git的传输协议</span>
-            </a>
-        </li>
         
     </ul>
 </section>
