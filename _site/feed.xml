@@ -3,10 +3,10 @@
   <channel>
     <title>MinsonLee</title>
     <description>Welcome To My WebSite !</description>
-    <link>http://0.0.0.0:4000/</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Apr 2018 15:39:25 +0800</pubDate>
-    <lastBuildDate>Fri, 27 Apr 2018 15:39:25 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 28 Apr 2018 00:46:29 +0800</pubDate>
+    <lastBuildDate>Sat, 28 Apr 2018 00:46:29 +0800</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
     
       <item>
@@ -33,26 +33,115 @@
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;2-哑协议&quot;&gt;2. 哑协议&lt;/h2&gt;
+&lt;h3 id=&quot;优点&quot;&gt;优点&lt;/h3&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;由于现在基本很少使用这种协议了,具体我也没使用过这个,这里只是总结官网上的文章,了解一下!&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;简单&lt;/li&gt;
+    &lt;li&gt;直接使用现有文件权限和网络访问权限&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;缺点&quot;&gt;缺点&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;配置共享文件系统难&lt;/li&gt;
+    &lt;li&gt;不方便多位置访问&lt;/li&gt;
+    &lt;li&gt;“远程磁盘”方式访问，配置不便，访问慢&lt;/li&gt;
+    &lt;li&gt;文件协议不保护仓库意外的损坏&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-哑dumb协议&quot;&gt;2. “哑(dumb)”协议&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;在Git 1.6.6版本之前只有哑协议可用，比较简单且通常是”只读模式”，而且是谁都可以读&lt;/li&gt;
+  &lt;li&gt;“哑协议”的只读限制是因为其服务端没有一个Git的守护进程在持续的关注”客户端”的所需并与之关注,故而使用哑协议,”客户端”是不能向”服务端”传输数据的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;由于现在基本很少使用这种协议了,具体我也没使用过这个,这里只是总结官网上的文章稍微加了自己的理解,了解一下!&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;3-智能协议&quot;&gt;3. 智能协议&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;智能协议是Git在&lt;code class=&quot;highlighter-rouge&quot;&gt;1.6.6&lt;/code&gt;版本中引入的,运行在标准的HTTP/S端口上,并提供各种HTTP验证机制,是目前最常用的传输方式。&lt;/li&gt;
+    &lt;li&gt;该协议在服务端运行了两组进程,分别负责上传[客户端的&lt;code class=&quot;highlighter-rouge&quot;&gt;send-pack&lt;/code&gt;进程连接到服务端&lt;code class=&quot;highlighter-rouge&quot;&gt;receive-pack&lt;/code&gt;进程]和下载数据[客户端的&lt;code class=&quot;highlighter-rouge&quot;&gt;fetch-pack&lt;/code&gt;进程连接服务端&lt;code class=&quot;highlighter-rouge&quot;&gt;upload-pack进程&lt;/code&gt;],它们可以读取本地数据,理解客户端有什么和需要什么,并为它生成合适的包文件.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;优点-1&quot;&gt;优点&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;效率比哑协议高&lt;/li&gt;
+    &lt;li&gt;提供使用各种的HTTP验证机制&lt;/li&gt;
+    &lt;li&gt;即支持 “git://” 协议一样设置匿名服务,也可以像SSH协议一样提供传输时授权和加密数据&lt;/li&gt;
+    &lt;li&gt;可用性强:①不同访问方式,只需一个URL及服务器只在需要授权时提示输入授权信息;②相比SSH协议,设置简单,免去设置公钥问题;③HTTP/S协议被广泛使用，一般的企业防火墙都会允许这些端口的数据通过;④可以在HTTPS协议上提供只读版本库的服务；甚至可以让客户端使用制定的SSL证书.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;缺点-1&quot;&gt;缺点&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;架设HTTP/S协议的服务端比SSH协议难&lt;/li&gt;
+    &lt;li&gt;如果你在HTTP上使用需授权的推送，管理凭证会比使用SSH秘钥认证麻烦&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&quot;4-ssh协议&quot;&gt;4. SSH协议&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;SSH协议是一个需要验证授权【采用公私密钥】的、普遍、建设简单、使用简单的协议&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;使用ssh协议克隆项目&quot;&gt;使用SSH协议克隆项目&lt;/h4&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone ssh://user@server/project.git 
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# scp方式&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone user@server:project.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;优点-2&quot;&gt;优点&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;建设SSH协议访问服务简单，而且大多数环境下已经支持SSH访问&lt;/li&gt;
+    &lt;li&gt;SSH访问安全–所有传输数据都要经过授权和加密&lt;/li&gt;
+    &lt;li&gt;SSH协议很高效，传输前会尽量的亚索数据[其他的协议也会]&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;缺点-2&quot;&gt;缺点&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;不能匿名访问:①.不利于项目开源;②.如果你要同事提供匿名只读访问和SSH协议，那么需要搭建SSH服务和架设一个可以让他人访问的服务&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;生成ssh公钥&quot;&gt;生成SSH公钥&lt;/h4&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; 加密方式[rsa|dsa] &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;youremai@email.com&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;推荐阅读：&lt;a href=&quot;https://help.github.com/articles/connecting-to-github-with-ssh/&quot;&gt;https://help.github.com/articles/connecting-to-github-with-ssh/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;5-git协议&quot;&gt;5. git协议&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;包含在Git里的一个特殊的守护进程，监听9418端口，但是访问无需任何授权，没有任何安全措施【要么所有人都可以访问，要么谁也不能访问，而且只要有人知道项目URL都可以向项目推送数据】&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;参考文献:&lt;/strong&gt;
-《Git内部原理-传输协议》：&lt;a href=&quot;https://git-scm.com/book/zh/v2/Git-内部原理-传输协议&quot;&gt;https://git-scm.com/book/zh/v2/Git-内部原理-传输协议&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;优点-3&quot;&gt;优点&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Git协议是Git使用的网络传输协议中最快的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;缺点-3&quot;&gt;缺点&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;缺乏授权机制&lt;/li&gt;
+  &lt;li&gt;架设繁杂困难；监听端口为非标准端口，一般企业防火前不会开放&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;参考文献:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;《Git内部原理-传输协议》：&lt;a href=&quot;https://git-scm.com/book/zh/v2/Git-内部原理-传输协议&quot;&gt;https://git-scm.com/book/zh/v2/Git-内部原理-传输协议&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 27 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2018/04/03.git-protocol/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/03.git-protocol/</guid>
+        <link>http://localhost:4000/2018/04/03.git-protocol/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/03.git-protocol/</guid>
         
         <category>Git</category>
         
@@ -107,7 +196,7 @@
 
 &lt;h4 id=&quot;缓存服务&quot;&gt;缓存服务&lt;/h4&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Mamecache &amp;amp;&amp;amp; Mamecached&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://blog.linuxeye.cn/345.html&quot;&gt;Memcache &amp;amp;&amp;amp; Memcached&lt;/a&gt;==&amp;gt;[类似MySQL和mysqld:&lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;daemon&lt;/code&gt;守护进程的意思]; PHP中的memcache(使用PHP实现)和PHP中的memcached(使用C的libmemcached实现,更加完善);==&amp;gt;使用Memcache的CAS做法&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Radis&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;MongoDB&lt;/li&gt;
 &lt;/ul&gt;
@@ -124,6 +213,7 @@
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;上一次帝明分享了MySQL的优化、慢查询的优化、索引的优化,整理深入学一下吧&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;公司大神们都推荐了《MySQL高性能》这本书,是不是该提上日程来看啦～&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;做了这么多次统计,自己踩了这多坑,看别人踩了这么多坑,该总结了吧?[select主键方式来代替count方案;使用一张临时表来存储定时执行记录:多批少量跑大表数据]&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;CAS原则:Compare and Set&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;编程思维&quot;&gt;编程思维&lt;/h3&gt;
@@ -171,8 +261,8 @@
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 26 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2018/04/think-in-erc/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/think-in-erc/</guid>
+        <link>http://localhost:4000/2018/04/think-in-erc/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/think-in-erc/</guid>
         
         <category>Thinking</category>
         
@@ -376,14 +466,16 @@ Commit号是在仓库中唯一:相比CVS(每个文件都有各自独立的版本
 2). 相比SVN能修改任意节点的提交说明的灵活性来说,Git只能修改最后一个commit的信息，且修改后将产生一个新的提交(commit号会变)&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;参考文献:&lt;/strong&gt;
-《SVN与Git的比较》：&lt;a href=&quot;http://blog.sina.com.cn/s/blog_765348af0102uyo9.html&quot;&gt;http://blog.sina.com.cn/s/blog_765348af0102uyo9.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考文献:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;《SVN与Git的比较》：&lt;a href=&quot;http://blog.sina.com.cn/s/blog_765348af0102uyo9.html&quot;&gt;http://blog.sina.com.cn/s/blog_765348af0102uyo9.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
+        <link>http://localhost:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
         
         <category>Git</category>
         
@@ -492,8 +584,8 @@ $ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
 
 </description>
         <pubDate>Tue, 24 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+        <link>http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
         
         <category>Git</category>
         
@@ -599,8 +691,8 @@ $ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</guid>
+        <link>http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</guid>
         
         <category>Git</category>
         

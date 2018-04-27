@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <title>Thinking In EasyRentCars</title>
-  <meta name="description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用What are you thinking?自动化部署  思考:当前公司使用vagrant进行本地自动化开发环境搭建,这...">
+  <meta name="description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Thinking In EasyRentCars">
-  <meta name="twitter:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用What are you thinking?自动化部署  思考:当前公司使用vagrant进行本地自动化开发环境搭建,这...">
+  <meta name="twitter:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="Thinking In EasyRentCars">
-  <meta property="og:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用What are you thinking?自动化部署  思考:当前公司使用vagrant进行本地自动化开发环境搭建,这...">
+  <meta property="og:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/2018/04/think-in-erc/">
-  <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://0.0.0.0:4000/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/2018/04/think-in-erc/">
+  <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
 
@@ -213,7 +213,7 @@
 
 <h4 id="缓存服务">缓存服务</h4>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mamecache &amp;&amp; Mamecached</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://blog.linuxeye.cn/345.html">Memcache &amp;&amp; Memcached</a>==&gt;[类似MySQL和mysqld:<code class="highlighter-rouge">d</code>是<code class="highlighter-rouge">daemon</code>守护进程的意思]; PHP中的memcache(使用PHP实现)和PHP中的memcached(使用C的libmemcached实现,更加完善);==&gt;使用Memcache的CAS做法</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Radis</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MongoDB</li>
 </ul>
@@ -230,6 +230,7 @@
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />上一次帝明分享了MySQL的优化、慢查询的优化、索引的优化,整理深入学一下吧</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />公司大神们都推荐了《MySQL高性能》这本书,是不是该提上日程来看啦～</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />做了这么多次统计,自己踩了这多坑,看别人踩了这么多坑,该总结了吧?[select主键方式来代替count方案;使用一张临时表来存储定时执行记录:多批少量跑大表数据]</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />CAS原则:Compare and Set</li>
 </ul>
 
 <h3 id="编程思维">编程思维</h3>

@@ -33,7 +33,7 @@ tags: [Thinking,EasyRentCars]
 > 思考:现在公司用到的一些服务,以前也是粗浅掌握,现在也是用公司封装的,是时候真正掌握和学习了解它们了
 
 #### 缓存服务
-- [ ] Mamecache && Mamecached
+- [ ] [Memcache && Memcached](https://blog.linuxeye.cn/345.html)==>[类似MySQL和mysqld:`d`是`daemon`守护进程的意思]; PHP中的memcache(使用PHP实现)和PHP中的memcached(使用C的libmemcached实现,更加完善);==>使用Memcache的CAS做法
 - [ ] Radis
 - [ ] MongoDB
 
@@ -46,6 +46,7 @@ tags: [Thinking,EasyRentCars]
 - [ ] 上一次帝明分享了MySQL的优化、慢查询的优化、索引的优化,整理深入学一下吧
 - [ ] 公司大神们都推荐了《MySQL高性能》这本书,是不是该提上日程来看啦～
 - [ ] 做了这么多次统计,自己踩了这多坑,看别人踩了这么多坑,该总结了吧?[select主键方式来代替count方案;使用一张临时表来存储定时执行记录:多批少量跑大表数据]
+- [ ] CAS原则:Compare and Set
 
 ### 编程思维
 > 最近写代码脑子有点抽,抽空整理学习一下以下的知识吧

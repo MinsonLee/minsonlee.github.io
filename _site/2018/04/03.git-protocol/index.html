@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/2018/04/03.git-protocol/">
-  <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://0.0.0.0:4000/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/2018/04/03.git-protocol/">
+  <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
 
@@ -189,19 +189,108 @@
   </ul>
 </blockquote>
 
-<h2 id="2-哑协议">2. 哑协议</h2>
+<h3 id="优点">优点</h3>
 <blockquote>
-  <p>由于现在基本很少使用这种协议了,具体我也没使用过这个,这里只是总结官网上的文章,了解一下!</p>
+  <ul>
+    <li>简单</li>
+    <li>直接使用现有文件权限和网络访问权限</li>
+  </ul>
+</blockquote>
+
+<h3 id="缺点">缺点</h3>
+<blockquote>
+  <ul>
+    <li>配置共享文件系统难</li>
+    <li>不方便多位置访问</li>
+    <li>“远程磁盘”方式访问，配置不便，访问慢</li>
+    <li>文件协议不保护仓库意外的损坏</li>
+  </ul>
+</blockquote>
+
+<h2 id="2-哑dumb协议">2. “哑(dumb)”协议</h2>
+<ul>
+  <li>在Git 1.6.6版本之前只有哑协议可用，比较简单且通常是”只读模式”，而且是谁都可以读</li>
+  <li>“哑协议”的只读限制是因为其服务端没有一个Git的守护进程在持续的关注”客户端”的所需并与之关注,故而使用哑协议,”客户端”是不能向”服务端”传输数据的</li>
+</ul>
+
+<blockquote>
+  <p>由于现在基本很少使用这种协议了,具体我也没使用过这个,这里只是总结官网上的文章稍微加了自己的理解,了解一下!</p>
 </blockquote>
 
 <h2 id="3-智能协议">3. 智能协议</h2>
+<blockquote>
+  <ul>
+    <li>智能协议是Git在<code class="highlighter-rouge">1.6.6</code>版本中引入的,运行在标准的HTTP/S端口上,并提供各种HTTP验证机制,是目前最常用的传输方式。</li>
+    <li>该协议在服务端运行了两组进程,分别负责上传[客户端的<code class="highlighter-rouge">send-pack</code>进程连接到服务端<code class="highlighter-rouge">receive-pack</code>进程]和下载数据[客户端的<code class="highlighter-rouge">fetch-pack</code>进程连接服务端<code class="highlighter-rouge">upload-pack进程</code>],它们可以读取本地数据,理解客户端有什么和需要什么,并为它生成合适的包文件.</li>
+  </ul>
+</blockquote>
+
+<h3 id="优点-1">优点</h3>
+<blockquote>
+  <ul>
+    <li>效率比哑协议高</li>
+    <li>提供使用各种的HTTP验证机制</li>
+    <li>即支持 “git://” 协议一样设置匿名服务,也可以像SSH协议一样提供传输时授权和加密数据</li>
+    <li>可用性强:①不同访问方式,只需一个URL及服务器只在需要授权时提示输入授权信息;②相比SSH协议,设置简单,免去设置公钥问题;③HTTP/S协议被广泛使用，一般的企业防火墙都会允许这些端口的数据通过;④可以在HTTPS协议上提供只读版本库的服务；甚至可以让客户端使用制定的SSL证书.</li>
+  </ul>
+</blockquote>
+
+<h3 id="缺点-1">缺点</h3>
+<blockquote>
+  <ul>
+    <li>架设HTTP/S协议的服务端比SSH协议难</li>
+    <li>如果你在HTTP上使用需授权的推送，管理凭证会比使用SSH秘钥认证麻烦</li>
+  </ul>
+</blockquote>
 
 <h2 id="4-ssh协议">4. SSH协议</h2>
+<p><strong>SSH协议是一个需要验证授权【采用公私密钥】的、普遍、建设简单、使用简单的协议</strong></p>
+
+<h4 id="使用ssh协议克隆项目">使用SSH协议克隆项目</h4>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone ssh://user@server/project.git 
+<span class="nv">$ </span><span class="c"># scp方式</span>
+<span class="nv">$ </span>git clone user@server:project.git
+</code></pre></div></div>
+
+<h4 id="优点-2">优点</h4>
+<blockquote>
+  <ul>
+    <li>建设SSH协议访问服务简单，而且大多数环境下已经支持SSH访问</li>
+    <li>SSH访问安全–所有传输数据都要经过授权和加密</li>
+    <li>SSH协议很高效，传输前会尽量的亚索数据[其他的协议也会]</li>
+  </ul>
+</blockquote>
+
+<h4 id="缺点-2">缺点</h4>
+<ul>
+  <li>不能匿名访问:①.不利于项目开源;②.如果你要同事提供匿名只读访问和SSH协议，那么需要搭建SSH服务和架设一个可以让他人访问的服务</li>
+</ul>
+
+<h4 id="生成ssh公钥">生成SSH公钥</h4>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh-keygen <span class="nt">-t</span> 加密方式[rsa|dsa] <span class="nt">-C</span> <span class="s2">"youremai@email.com"</span>
+</code></pre></div></div>
+<p>推荐阅读：<a href="https://help.github.com/articles/connecting-to-github-with-ssh/">https://help.github.com/articles/connecting-to-github-with-ssh/</a></p>
 
 <h2 id="5-git协议">5. git协议</h2>
+<blockquote>
+  <p>包含在Git里的一个特殊的守护进程，监听9418端口，但是访问无需任何授权，没有任何安全措施【要么所有人都可以访问，要么谁也不能访问，而且只要有人知道项目URL都可以向项目推送数据】</p>
+</blockquote>
 
-<p><strong>参考文献:</strong>
-《Git内部原理-传输协议》：<a href="https://git-scm.com/book/zh/v2/Git-内部原理-传输协议">https://git-scm.com/book/zh/v2/Git-内部原理-传输协议</a></p>
+<h3 id="优点-3">优点</h3>
+<ul>
+  <li>Git协议是Git使用的网络传输协议中最快的</li>
+</ul>
+
+<h3 id="缺点-3">缺点</h3>
+<ul>
+  <li>缺乏授权机制</li>
+  <li>架设繁杂困难；监听端口为非标准端口，一般企业防火前不会开放</li>
+</ul>
+
+<p><strong>参考文献:</strong></p>
+<ul>
+  <li>《Git内部原理-传输协议》：<a href="https://git-scm.com/book/zh/v2/Git-内部原理-传输协议">https://git-scm.com/book/zh/v2/Git-内部原理-传输协议</a></li>
+</ul>
 
 <p>转载请声明出处:<a href="https://minsonlee.github.io">MinsonLee的博客:https://minsonlee.github.io</a></p>
 
