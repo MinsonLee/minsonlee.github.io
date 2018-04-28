@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <title>Thinking In EasyRentCars</title>
-  <meta name="description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
+  <meta name="description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用What are you thinking?自动化部署  思考:当前公司使用vagrant进行本地自动化开发环境搭建,这...">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Thinking In EasyRentCars">
-  <meta name="twitter:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
+  <meta name="twitter:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用What are you thinking?自动化部署  思考:当前公司使用vagrant进行本地自动化开发环境搭建,这...">
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="Thinking In EasyRentCars">
-  <meta property="og:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用">
+  <meta property="og:description" content="背景  最近在公司遇到了很多新的知识点、发现了很多新的思考点、对于一些问题学到了很多新的解决方案…感到脑子不够用,特开一个篇章用以记录在ERC工作过程中遇到的、悟到的东西！仅给自己作为整理知识用What are you thinking?自动化部署  思考:当前公司使用vagrant进行本地自动化开发环境搭建,这...">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2018/04/think-in-erc/">
-  <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://localhost:4000/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/2018/04/erc/">
+  <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://0.0.0.0:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
 
@@ -187,7 +187,7 @@
 <ul class="task-list">
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />vagrant同步更新文件延缓问题?[插件:<code class="highlighter-rouge">vagrant-winnfsd-1.4.0.gem</code>==&gt;<code class="highlighter-rouge">vagrant plugin install /gem-path</code>]</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://www.virtualbox.org/manual/">如何使用VBoxManage加载box解决vagrant运行缓慢问题?</a></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Docker的深入了解</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="http://www.docker.org.cn/page/resources.html">Docker的深入了解</a></li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />通过对vagrant的了解和学习发现”计算机网络”连一些基础知识都已经还给老师了?但是这很重要,抽时间整理、记录、深入学习?计算机四大原理:操作系统原理、编译原理、计算机组成原理、网络原理;线性代数;算法与数据结构</li>
 </ul>
 
@@ -204,6 +204,7 @@
 
 <ul class="task-list">
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />消息队列的运用:①削峰–&gt;es:秒杀活动&lt;==&gt;地铁拉闸限流;②业务解耦–&gt;MQ,互联网架构解耦神器[寄信人和邮差的场景==&gt;消费者];③异步</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />使用环形队列解决自动确认订单问题,避免全表扫描</li>
 </ul>
 
 <h3 id="服务">服务</h3>
@@ -213,24 +214,37 @@
 
 <h4 id="缓存服务">缓存服务</h4>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://blog.linuxeye.cn/345.html">Memcache &amp;&amp; Memcached</a>==&gt;[类似MySQL和mysqld:<code class="highlighter-rouge">d</code>是<code class="highlighter-rouge">daemon</code>守护进程的意思]; PHP中的memcache(使用PHP实现)和PHP中的memcached(使用C的libmemcached实现,更加完善);==&gt;使用Memcache的CAS做法</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://blog.linuxeye.cn/345.html">Memcache &amp;&amp; Memcached</a>==&gt;[类似MySQL和mysqld:<code class="highlighter-rouge">d</code>是<code class="highlighter-rouge">daemon</code>守护进程的意思]; PHP中的memcache(使用PHP实现)和PHP中的memcached(使用C的libmemcached实现,更加完善);</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Radis</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MongoDB</li>
-</ul>
-
-<h4 id="全文搜索服务">全文搜索服务</h4>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />sphinx</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Elasticsearch搜索服务==&gt;Elasticsearch是否可以代替Mongo成为搜索存储服务器?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />各类缓存服务系统的CAS实现?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />各类缓存服务系统的失效算法是如何的?LRU淘汰算法</li>
 </ul>
 
 <h4 id="数据库服务">数据库服务</h4>
 <ul class="task-list">
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MySQL都出8啦…还不学习了解干嘛?</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />上一次帝明分享了MySQL的优化、慢查询的优化、索引的优化,整理深入学一下吧</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="http://www.cnblogs.com/hanybblog/p/6485419.html">MySQL的btree索引和hash索引的区别</a></li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />公司大神们都推荐了《MySQL高性能》这本书,是不是该提上日程来看啦～</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />做了这么多次统计,自己踩了这多坑,看别人踩了这么多坑,该总结了吧?[select主键方式来代替count方案;使用一张临时表来存储定时执行记录:多批少量跑大表数据]</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />使用记录目标数据的方式来避免全表扫描;</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MySQL计算大表count(*)替代方案:<code class="highlighter-rouge">SELECT id FROM  zuzuche_world_db.new_search_history_tbl {$where_str} LIMIT 5000,1</code>;</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />CAS原则:Compare and Set</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />一致性哈希分表</li>
+</ul>
+
+<h5 id="锁机制">锁机制</h5>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />锁的概念?分类?MySQL中的锁：<a href="https://blog.csdn.net/soonfly/article/details/70238902">https://blog.csdn.net/soonfly/article/details/70238902</a> <a href="https://blog.csdn.net/soonfly/article/details/70238902">https://blog.csdn.net/soonfly/article/details/70238902</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />不同类型锁的应用场景?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />高级”锁”的设计思想：</li>
+</ul>
+
+<h4 id="全文搜索服务">全文搜索服务</h4>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />sphinx</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Elasticsearch搜索服务==&gt;Elasticsearch是否可以代替Mongo成为搜索存储服务器?</li>
 </ul>
 
 <h3 id="编程思维">编程思维</h3>
@@ -250,10 +264,27 @@
 </blockquote>
 
 <ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://blog.csdn.net/time888/article/details/53414809">PHP运行模式:https://blog.csdn.net/time888/article/details/53414809</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://blog.csdn.net/sinat_22991367/article/details/73431269"><code class="highlighter-rouge">php-fpm.conf</code>配置详解</a></li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />opcache深入学习[以前只是知道有这个东西,但是没怎么深入了解过]</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />PHP生成器:<a href="https://www.virtualbox.org/manual/">①PHP生成器详解</a> <a href="https://www.virtualbox.org/manual/">② 在PHP中使用协程实现多任务调度 
 </a></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Composer的深入了解学习与运用</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Composer的深入了解学习与运用:<a href="http://docs.phpcomposer.com">http://docs.phpcomposer.com</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />推荐阅读博客:https://www.awaimai.com/2200.html</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><code class="highlighter-rouge">fsockopen</code>替代公司实现异步请求方案:<a href="https://segmentfault.com/a/1190000002982448">https://segmentfault.com/a/1190000002982448</a> <a href="https://blog.csdn.net/qq43599939/article/details/50570098">https://blog.csdn.net/qq43599939/article/details/50570098</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="http://www.laruence.com/2011/04/13/1991.html">使用<code class="highlighter-rouge">fastcgi_finish_request</code>提高页面响应速度</a>;</li>
+  <li class="task-list-item">[ ][使用<code class="highlighter-rouge">fastcgi_finish_request</code>的踩坑问题:max_execution_time-超时问题]==&gt;要看PHP运行的模式是啥?怎么处理?</li>
+  <li class="task-list-item">[ ]使用<code class="highlighter-rouge">fastcgi_finish_request</code>的踩坑问题:客户端断开连接-生命周期问题–使用ignore_user_abort(true)解决,同时也要看执行模式是啥?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="http://www.cnblogs.com/wgw8299/articles/2170092.html">使用<code class="highlighter-rouge">ignore_user_abort</code>实现定时任务方案</a>==&gt;[一般没人这么做吧,定时任务肯定是用cgi模式做居多的,<code class="highlighter-rouge">ignore_user_abort</code>是否对<code class="highlighter-rouge">cgi模式</code>有效?==&gt;应该没效吧,不然尼玛怎么停呢?每次都kill掉这个进程?]
+    <blockquote>
+      <p><strong>一般定时计划方案:</strong></p>
+      <ol>
+        <li>linux系统的<code class="highlighter-rouge">crontab</code></li>
+        <li>使用进程管理工具:<a href="http://wiki.jikexueyuan.com/project/docker-technology-and-combat/supervisor.html">Supervisor</a></li>
+      </ol>
+    </blockquote>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://www.cnblogs.com/huanxiyun/articles/5329600.html">PHP使用curl_multi_init带来CPU高负荷问题</a></li>
 </ul>
 
 <h3 id="工具">工具</h3>
@@ -273,6 +304,10 @@
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />最近公司服务器一直CPU报警,消耗太高,如何排查CPU过高?</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />运维生成空间:<a href="http://www.ttlsa.com">http://www.ttlsa.com</a></li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />数据恢复:<a href="https://mp.weixin.qq.com/s/Ozqu2A7Sy_TGKkF6yF1rDQ">https://mp.weixin.qq.com/s/Ozqu2A7Sy_TGKkF6yF1rDQ</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />正向代理(代理客户端访问中间机器,让其帮忙去访问服务机器:例如自己搭梯子去实现翻墙) &amp;&amp; 反向代理(服务机器访问中间机器,让中间机器访问内部机器:例如:SLB负载均衡集群)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />[Squid服务]:<a href="http://blog.51cto.com/guojiping/978839">http://blog.51cto.com/guojiping/978839</a> <a href="http://wiki.jikexueyuan.com/project/linux/squid.html">http://wiki.jikexueyuan.com/project/linux/squid.html</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="https://www.cnblogs.com/kevingrace/p/6188123.html"><code class="highlighter-rouge">Nginx</code>和<code class="highlighter-rouge">Squid</code>和<code class="highlighter-rouge">Varnish</code>的比较</a> <img src="https://sfault-image.b0.upaiyun.com/167/938/1679380024-59a8fa4521e2c" alt="正向代理和反向代理" /></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><code class="highlighter-rouge">CDN</code>回源问题设置:Cookie、UA信息配置</li>
 </ul>
 
 <p>转载请声明出处:<a href="https://minsonlee.github.io">MinsonLee的博客:https://minsonlee.github.io</a></p>

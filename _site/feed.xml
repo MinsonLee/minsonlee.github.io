@@ -3,11 +3,39 @@
   <channel>
     <title>MinsonLee</title>
     <description>Welcome To My WebSite !</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Apr 2018 03:35:35 +0800</pubDate>
-    <lastBuildDate>Sat, 28 Apr 2018 03:35:35 +0800</lastBuildDate>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 28 Apr 2018 19:50:57 +0800</pubDate>
+    <lastBuildDate>Sat, 28 Apr 2018 19:50:57 +0800</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>Thinking In Life</title>
+        <description>&lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;用以记录非工作过程中遇到的、悟到的东西！仅给自己作为整理知识用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;what-are-you-thinking&quot;&gt;What are you thinking?&lt;/h2&gt;
+
+&lt;h3 id=&quot;博客搭建&quot;&gt;博客搭建&lt;/h3&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;利用Jekyll+Github-Page搭建静态博客&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://imsun.net/posts/gitment-introduction/&quot;&gt;利用&lt;code class=&quot;highlighter-rouge&quot;&gt;Gitment&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;github-page&lt;/code&gt;搭建评论系统&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 28 Apr 2018 00:00:00 +0800</pubDate>
+        <link>http://0.0.0.0:4000/2018/04/life/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/life/</guid>
+        
+        <category>Thinking</category>
+        
+        <category>life</category>
+        
+        
+      </item>
     
       <item>
         <title>04.Git基础操作</title>
@@ -46,15 +74,28 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;添加公钥到githubgitlab&quot;&gt;添加公钥到Github/GitLab&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;/images/article/git/add-github-public-ssh-key.png&quot; alt=&quot;Github添加公钥&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/article/git/add-gitlab-public-ssh-key.png&quot; alt=&quot;Gitlab添加公钥&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/article/git/add_ssh_key_to_server.gif&quot; alt=&quot;add ssh-key to github/gitlab&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;测试秘钥是否可用&quot;&gt;测试秘钥是否可用&lt;/h4&gt;
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# 验证秘钥是否在Github上可用&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; git@github.com
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# 验证秘钥是否在GitLab上可用&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; git@gitlab.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;配置使用指定私钥&quot;&gt;配置使用指定私钥&lt;/h4&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# 亲测可行,BD了很多...天下文章一大抄...&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi ~/.ssh/config &lt;span class=&quot;c&quot;&gt;# 将以下代码写入,注释去掉&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 指定github使用的私钥&lt;/span&gt;
+Host github.com
+    HostName github.com[或者这里填写github的IP]
+    IdentityFile /github-private-secret-key-path[指定私钥绝对路径]
+
+&lt;span class=&quot;c&quot;&gt;# 指定gitlab使用的私钥&lt;/span&gt;
+Host gitlab.com
+    HostName gitlab.com[或者这里填写gitlab服务机的IP]
+    IdentityFile /gitlab-private-secret-key-path[指定私钥绝对路径]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;基本操作&quot;&gt;基本操作&lt;/h2&gt;
@@ -156,8 +197,8 @@
 
 </description>
         <pubDate>Sat, 28 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/04.git-basic-base/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/04.git-basic-base/</guid>
+        <link>http://0.0.0.0:4000/2018/04/04.git-basic-base/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/04.git-basic-base/</guid>
         
         <category>Git</category>
         
@@ -295,8 +336,8 @@
 
 </description>
         <pubDate>Fri, 27 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/03.git-protocol/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/03.git-protocol/</guid>
+        <link>http://0.0.0.0:4000/2018/04/03.git-protocol/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/03.git-protocol/</guid>
         
         <category>Git</category>
         
@@ -325,7 +366,7 @@
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;vagrant同步更新文件延缓问题?[插件:&lt;code class=&quot;highlighter-rouge&quot;&gt;vagrant-winnfsd-1.4.0.gem&lt;/code&gt;==&amp;gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vagrant plugin install /gem-path&lt;/code&gt;]&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://www.virtualbox.org/manual/&quot;&gt;如何使用VBoxManage加载box解决vagrant运行缓慢问题?&lt;/a&gt;&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Docker的深入了解&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;http://www.docker.org.cn/page/resources.html&quot;&gt;Docker的深入了解&lt;/a&gt;&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;通过对vagrant的了解和学习发现”计算机网络”连一些基础知识都已经还给老师了?但是这很重要,抽时间整理、记录、深入学习?计算机四大原理:操作系统原理、编译原理、计算机组成原理、网络原理;线性代数;算法与数据结构&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -342,6 +383,7 @@
 
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;消息队列的运用:①削峰–&amp;gt;es:秒杀活动&amp;lt;==&amp;gt;地铁拉闸限流;②业务解耦–&amp;gt;MQ,互联网架构解耦神器[寄信人和邮差的场景==&amp;gt;消费者];③异步&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;使用环形队列解决自动确认订单问题,避免全表扫描&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;服务&quot;&gt;服务&lt;/h3&gt;
@@ -351,24 +393,37 @@
 
 &lt;h4 id=&quot;缓存服务&quot;&gt;缓存服务&lt;/h4&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://blog.linuxeye.cn/345.html&quot;&gt;Memcache &amp;amp;&amp;amp; Memcached&lt;/a&gt;==&amp;gt;[类似MySQL和mysqld:&lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;daemon&lt;/code&gt;守护进程的意思]; PHP中的memcache(使用PHP实现)和PHP中的memcached(使用C的libmemcached实现,更加完善);==&amp;gt;使用Memcache的CAS做法&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://blog.linuxeye.cn/345.html&quot;&gt;Memcache &amp;amp;&amp;amp; Memcached&lt;/a&gt;==&amp;gt;[类似MySQL和mysqld:&lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;daemon&lt;/code&gt;守护进程的意思]; PHP中的memcache(使用PHP实现)和PHP中的memcached(使用C的libmemcached实现,更加完善);&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Radis&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;MongoDB&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;全文搜索服务&quot;&gt;全文搜索服务&lt;/h4&gt;
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;sphinx&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Elasticsearch搜索服务==&amp;gt;Elasticsearch是否可以代替Mongo成为搜索存储服务器?&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;各类缓存服务系统的CAS实现?&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;各类缓存服务系统的失效算法是如何的?LRU淘汰算法&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;数据库服务&quot;&gt;数据库服务&lt;/h4&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;MySQL都出8啦…还不学习了解干嘛?&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;上一次帝明分享了MySQL的优化、慢查询的优化、索引的优化,整理深入学一下吧&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;http://www.cnblogs.com/hanybblog/p/6485419.html&quot;&gt;MySQL的btree索引和hash索引的区别&lt;/a&gt;&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;公司大神们都推荐了《MySQL高性能》这本书,是不是该提上日程来看啦～&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;做了这么多次统计,自己踩了这多坑,看别人踩了这么多坑,该总结了吧?[select主键方式来代替count方案;使用一张临时表来存储定时执行记录:多批少量跑大表数据]&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;使用记录目标数据的方式来避免全表扫描;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;MySQL计算大表count(*)替代方案:&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT id FROM  zuzuche_world_db.new_search_history_tbl {$where_str} LIMIT 5000,1&lt;/code&gt;;&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;CAS原则:Compare and Set&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;一致性哈希分表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;锁机制&quot;&gt;锁机制&lt;/h5&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;锁的概念?分类?MySQL中的锁：&lt;a href=&quot;https://blog.csdn.net/soonfly/article/details/70238902&quot;&gt;https://blog.csdn.net/soonfly/article/details/70238902&lt;/a&gt; &lt;a href=&quot;https://blog.csdn.net/soonfly/article/details/70238902&quot;&gt;https://blog.csdn.net/soonfly/article/details/70238902&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;不同类型锁的应用场景?&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;高级”锁”的设计思想：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;全文搜索服务&quot;&gt;全文搜索服务&lt;/h4&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;sphinx&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Elasticsearch搜索服务==&amp;gt;Elasticsearch是否可以代替Mongo成为搜索存储服务器?&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;编程思维&quot;&gt;编程思维&lt;/h3&gt;
@@ -388,10 +443,27 @@
 &lt;/blockquote&gt;
 
 &lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://blog.csdn.net/time888/article/details/53414809&quot;&gt;PHP运行模式:https://blog.csdn.net/time888/article/details/53414809&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://blog.csdn.net/sinat_22991367/article/details/73431269&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php-fpm.conf&lt;/code&gt;配置详解&lt;/a&gt;&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;opcache深入学习[以前只是知道有这个东西,但是没怎么深入了解过]&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;PHP生成器:&lt;a href=&quot;https://www.virtualbox.org/manual/&quot;&gt;①PHP生成器详解&lt;/a&gt; &lt;a href=&quot;https://www.virtualbox.org/manual/&quot;&gt;② 在PHP中使用协程实现多任务调度 
 &lt;/a&gt;&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Composer的深入了解学习与运用&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Composer的深入了解学习与运用:&lt;a href=&quot;http://docs.phpcomposer.com&quot;&gt;http://docs.phpcomposer.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;推荐阅读博客:https://www.awaimai.com/2200.html&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fsockopen&lt;/code&gt;替代公司实现异步请求方案:&lt;a href=&quot;https://segmentfault.com/a/1190000002982448&quot;&gt;https://segmentfault.com/a/1190000002982448&lt;/a&gt; &lt;a href=&quot;https://blog.csdn.net/qq43599939/article/details/50570098&quot;&gt;https://blog.csdn.net/qq43599939/article/details/50570098&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;http://www.laruence.com/2011/04/13/1991.html&quot;&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fastcgi_finish_request&lt;/code&gt;提高页面响应速度&lt;/a&gt;;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;[ ][使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fastcgi_finish_request&lt;/code&gt;的踩坑问题:max_execution_time-超时问题]==&amp;gt;要看PHP运行的模式是啥?怎么处理?&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;[ ]使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fastcgi_finish_request&lt;/code&gt;的踩坑问题:客户端断开连接-生命周期问题–使用ignore_user_abort(true)解决,同时也要看执行模式是啥?&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;http://www.cnblogs.com/wgw8299/articles/2170092.html&quot;&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;ignore_user_abort&lt;/code&gt;实现定时任务方案&lt;/a&gt;==&amp;gt;[一般没人这么做吧,定时任务肯定是用cgi模式做居多的,&lt;code class=&quot;highlighter-rouge&quot;&gt;ignore_user_abort&lt;/code&gt;是否对&lt;code class=&quot;highlighter-rouge&quot;&gt;cgi模式&lt;/code&gt;有效?==&amp;gt;应该没效吧,不然尼玛怎么停呢?每次都kill掉这个进程?]
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;一般定时计划方案:&lt;/strong&gt;&lt;/p&gt;
+      &lt;ol&gt;
+        &lt;li&gt;linux系统的&lt;code class=&quot;highlighter-rouge&quot;&gt;crontab&lt;/code&gt;&lt;/li&gt;
+        &lt;li&gt;使用进程管理工具:&lt;a href=&quot;http://wiki.jikexueyuan.com/project/docker-technology-and-combat/supervisor.html&quot;&gt;Supervisor&lt;/a&gt;&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://www.cnblogs.com/huanxiyun/articles/5329600.html&quot;&gt;PHP使用curl_multi_init带来CPU高负荷问题&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;工具&quot;&gt;工具&lt;/h3&gt;
@@ -411,13 +483,17 @@
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;最近公司服务器一直CPU报警,消耗太高,如何排查CPU过高?&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;运维生成空间:&lt;a href=&quot;http://www.ttlsa.com&quot;&gt;http://www.ttlsa.com&lt;/a&gt;&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;数据恢复:&lt;a href=&quot;https://mp.weixin.qq.com/s/Ozqu2A7Sy_TGKkF6yF1rDQ&quot;&gt;https://mp.weixin.qq.com/s/Ozqu2A7Sy_TGKkF6yF1rDQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;正向代理(代理客户端访问中间机器,让其帮忙去访问服务机器:例如自己搭梯子去实现翻墙) &amp;amp;&amp;amp; 反向代理(服务机器访问中间机器,让中间机器访问内部机器:例如:SLB负载均衡集群)&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;[Squid服务]:&lt;a href=&quot;http://blog.51cto.com/guojiping/978839&quot;&gt;http://blog.51cto.com/guojiping/978839&lt;/a&gt; &lt;a href=&quot;http://wiki.jikexueyuan.com/project/linux/squid.html&quot;&gt;http://wiki.jikexueyuan.com/project/linux/squid.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;a href=&quot;https://www.cnblogs.com/kevingrace/p/6188123.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Nginx&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Squid&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Varnish&lt;/code&gt;的比较&lt;/a&gt; &lt;img src=&quot;https://sfault-image.b0.upaiyun.com/167/938/1679380024-59a8fa4521e2c&quot; alt=&quot;正向代理和反向代理&quot; /&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CDN&lt;/code&gt;回源问题设置:Cookie、UA信息配置&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 26 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/think-in-erc/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/think-in-erc/</guid>
+        <link>http://0.0.0.0:4000/2018/04/erc/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/erc/</guid>
         
         <category>Thinking</category>
         
@@ -629,8 +705,8 @@ Commit号是在仓库中唯一:相比CVS(每个文件都有各自独立的版本
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
+        <link>http://0.0.0.0:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/02.Git%E4%B8%8ESVN%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
         
         <category>Git</category>
         
@@ -739,8 +815,8 @@ $ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
 
 </description>
         <pubDate>Tue, 24 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+        <link>http://0.0.0.0:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/01.Git%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
         
         <category>Git</category>
         
@@ -846,8 +922,8 @@ $ source /etc/bashrc # 重新加载一次bashrc文件使得设置生效
 &lt;p&gt;转载请声明出处:&lt;a href=&quot;https://minsonlee.github.io&quot;&gt;MinsonLee的博客:https://minsonlee.github.io&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</guid>
+        <link>http://0.0.0.0:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2018/04/00.Git%E9%97%AE%E4%B8%96/</guid>
         
         <category>Git</category>
         

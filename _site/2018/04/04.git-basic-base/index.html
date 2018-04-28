@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <title>04.Git基础操作</title>
-  <meta name="description" content="背景  其实工作中,你只需要掌握最基础的Git的使用即可了,你可以完全不理会Git的原理啥的,只是掌握了会更好,但一般只需要掌握以下几点,已经可以顺利完成工作了:">
+  <meta name="description" content="背景  其实工作中,你只需要掌握最基础的Git的使用即可了,你可以完全不理会Git的原理啥的,只是掌握了会更好,但一般只需要掌握以下几点,已经可以顺利完成工作了:  第一次,如何将生成的SSH公钥配置到Github或自己公司搭建的GitLab服务器上?  如何开展工作:克隆–&gt;以此为基础创建/切换到你自己”...">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="04.Git基础操作">
-  <meta name="twitter:description" content="背景  其实工作中,你只需要掌握最基础的Git的使用即可了,你可以完全不理会Git的原理啥的,只是掌握了会更好,但一般只需要掌握以下几点,已经可以顺利完成工作了:">
+  <meta name="twitter:description" content="背景  其实工作中,你只需要掌握最基础的Git的使用即可了,你可以完全不理会Git的原理啥的,只是掌握了会更好,但一般只需要掌握以下几点,已经可以顺利完成工作了:  第一次,如何将生成的SSH公钥配置到Github或自己公司搭建的GitLab服务器上?  如何开展工作:克隆–&gt;以此为基础创建/切换到你自己”...">
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="04.Git基础操作">
-  <meta property="og:description" content="背景  其实工作中,你只需要掌握最基础的Git的使用即可了,你可以完全不理会Git的原理啥的,只是掌握了会更好,但一般只需要掌握以下几点,已经可以顺利完成工作了:">
+  <meta property="og:description" content="背景  其实工作中,你只需要掌握最基础的Git的使用即可了,你可以完全不理会Git的原理啥的,只是掌握了会更好,但一般只需要掌握以下几点,已经可以顺利完成工作了:  第一次,如何将生成的SSH公钥配置到Github或自己公司搭建的GitLab服务器上?  如何开展工作:克隆–&gt;以此为基础创建/切换到你自己”...">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2018/04/04.git-basic-base/">
-  <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://localhost:4000/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/2018/04/04.git-basic-base/">
+  <link rel="alternate" type="application/rss+xml" title="MinsonLee" href="http://0.0.0.0:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
 
@@ -202,15 +202,28 @@
 </code></pre></div></div>
 
 <h4 id="添加公钥到githubgitlab">添加公钥到Github/GitLab</h4>
-<p><img src="/images/article/git/add-github-public-ssh-key.png" alt="Github添加公钥" /></p>
-
-<p><img src="/images/article/git/add-gitlab-public-ssh-key.png" alt="Gitlab添加公钥" /></p>
+<p><img src="/images/article/git/add_ssh_key_to_server.gif" alt="add ssh-key to github/gitlab" /></p>
 
 <h4 id="测试秘钥是否可用">测试秘钥是否可用</h4>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># 验证秘钥是否在Github上可用</span>
 <span class="nv">$ </span>ssh <span class="nt">-T</span> git@github.com
 <span class="nv">$ </span><span class="c"># 验证秘钥是否在GitLab上可用</span>
 <span class="nv">$ </span>ssh <span class="nt">-T</span> git@gitlab.com
+</code></pre></div></div>
+
+<h4 id="配置使用指定私钥">配置使用指定私钥</h4>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># 亲测可行,BD了很多...天下文章一大抄...</span>
+<span class="nv">$ </span>vi ~/.ssh/config <span class="c"># 将以下代码写入,注释去掉</span>
+
+<span class="c"># 指定github使用的私钥</span>
+Host github.com
+    HostName github.com[或者这里填写github的IP]
+    IdentityFile /github-private-secret-key-path[指定私钥绝对路径]
+
+<span class="c"># 指定gitlab使用的私钥</span>
+Host gitlab.com
+    HostName gitlab.com[或者这里填写gitlab服务机的IP]
+    IdentityFile /gitlab-private-secret-key-path[指定私钥绝对路径]
 </code></pre></div></div>
 
 <h2 id="基本操作">基本操作</h2>
@@ -384,6 +397,11 @@
             </a>
         </li>
         
+        
+        <li class="next">
+            <a href="/2018/04/life/" data-toggle="tooltip" data-placement="top" title="Thinking In Life">下一篇：  <span>Thinking In Life</span>
+            </a>
+        </li>
         
     </ul>
 </section>
