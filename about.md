@@ -15,6 +15,7 @@ title: 关于我
 - PHP
 - 前端
 - English
+- Shell
 
 # 最近在读
 - 《嫌疑人的X献身》
