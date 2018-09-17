@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "11.Git error: bad signature and fatal: index file corrupt"
+title: "01.Git error: bad signature and fatal: index file corrupt"
 date: 2018-09-13
 tags: [Git,疑难杂症]
 ---
