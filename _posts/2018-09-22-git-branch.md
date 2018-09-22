@@ -31,6 +31,8 @@ tag: Git
 
 
 ### 为什么每个人都应该写好自己的commit信息？
+> 推荐阅读:[git commit 规范指南](https://segmentfault.com/a/1190000009048911)
+
 1. 提供更多的历史信息，方便快速浏览
 2. 可以过滤某些commit（比如文档改动），便于快速查找信息【commit信息即项目的change log】
 3. 可读性好，清晰，不必深入看代码即可了解当前commit的作用
@@ -39,4 +41,3 @@ tag: Git
 6. 方便进行git revert commitID操作
 7. 方便通过git来进行debug时的操作
 8. 提高整体项目质量与人工素质
-> 推荐阅读:[git commit 规范指南](https://segmentfault.com/a/1190000009048911)
