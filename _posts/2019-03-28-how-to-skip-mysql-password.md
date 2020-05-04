@@ -86,3 +86,8 @@ mysqld –init-file=d:mysqlc.txt –console
         ```
 > 关于 MySQL 密码管理机制：[https://dev.mysql.com/doc/refman/8.0/en/password-management.html#password-expiration-policy](https://dev.mysql.com/doc/refman/8.0/en/password-management.html#password-expiration-policy)
 
+
+转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
+
+扫描下方二维码，关注公众号，接收更多实时内容
+![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)

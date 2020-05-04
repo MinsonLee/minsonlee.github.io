@@ -160,3 +160,9 @@ error: Cannot delete branch 'master-bak' checked out at 'C:/Users/Minso/Desktop/
 ## 思考
 测试环境的部署是属于全量包部署，通过环境切换系统种植 cookie 进行 nginx 重定向目录访问，如何利用工作树减少测试服务器资源部署的耗时及磁盘占用空间呢？
 ![image](/images/article/git/)
+
+
+转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
+
+扫描下方二维码，关注公众号，接收更多实时内容
+![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)

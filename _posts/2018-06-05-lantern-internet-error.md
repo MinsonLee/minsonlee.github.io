@@ -28,3 +28,8 @@ tags: [网络,系统]
 > 方法是网上搜的:`Lantern 全局代理`,在此记录
 
 ![取消Lantern全局代理设置](/images/article/internet/cancel_lantern_global_proxy_setting.gif)
+
+转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
+
+扫描下方二维码，关注公众号，接收更多实时内容
+![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)

@@ -159,3 +159,5 @@ $ git push -u orgin master:master # -u 参数是为了设置分支关联,关联�
 
 转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
 
+扫描下方二维码，关注公众号，接收更多实时内容
+![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)

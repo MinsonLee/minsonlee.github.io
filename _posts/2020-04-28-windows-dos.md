@@ -118,4 +118,8 @@ Windows 上常用操作执行 DOS 的终端有：`CMD.exe` 和 `PowerShell`，�
 - [Linux下的shell工作原理是什么？](https://blog.csdn.net/YEYUANGEN/article/details/6858062)
 - [电影推荐：硅谷传奇](https://movie.douban.com/subject/1298084)
 
-![关注公众号：Leaders工作室](/images/article/WeChat/leaders.png)
+
+转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
+
+扫描下方二维码，关注公众号，接收更多实时内容
+![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)
