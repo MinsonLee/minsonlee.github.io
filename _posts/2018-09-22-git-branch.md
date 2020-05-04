@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Git分支策略"
+title: "15.Git分支策略"
 date: 2018-09-22
 tag: Git
 ---
