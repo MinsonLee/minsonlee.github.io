@@ -63,6 +63,9 @@ $ git checkout -b <branch_name>
 ```sh
 # 前面带`*`的就是你当前所在的分支
 $ git branch
+
+# 或者通过获取HEAD引用的方式获取当前分支名
+$ git symbolic-ref --short -q HEAD
 ```
 ```sh
 # 前面的文章也说过:如果不知道下一步要干嘛,就尝试一下
