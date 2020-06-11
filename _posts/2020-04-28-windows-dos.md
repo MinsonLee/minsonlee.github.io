@@ -82,24 +82,25 @@ tag: Windows
 - 控制面板\系统\属性：`sysdm.cpl`【你可以快速设置`环境变量的地方`】
 
 ### 设置定时关机
-- 定时关机，如，3600秒后关机：shutdown -s -t 3600
-- 设置具体时间关机：at 21:20 shutdown -s
-- 取消关机命令：shutdown -a
+- 定时关机，如，3600秒后关机：`shutdown -s -t 3600`
+- 设置具体时间关机：`at 21:20 shutdown -s`
+- 取消关机命令：`shutdown -a`
 
 ### 磁盘清理
 - 磁盘清理：`c:\windows\SYSTEM32\cleanmgr.exe /小写盘符Drive` 
 > 注意：在此命令中，占位符驱动器表示要清除硬盘的驱动器号。不过自从我用了 Dis++ 和火绒，已经不怎么用这个命令了。
-- 直接进行磁盘清理(所有磁盘)： cleanmgr /SAGERUN:99
+- 直接进行磁盘清理(所有磁盘)： `cleanmgr /SAGERUN:99`
 
 
 ### 系统设置
-- 系统设置(开机启动项)：msconfig
-- 关闭休眠模式：powercfg -h off
+- 系统设置(开机启动项)：`msconfig`
+- 关闭休眠模式：`powercfg -h off`
 > 如果觉得休眠功能没用可以关闭，避免C盘下产生不必要垃圾
 > - pagefile.sys 系统文件转移(可以直接删除 hiberfil.sys )：http://www.windows764.org/news/17155.html
 
 ### 系统信息
-- 展示 windows 系统版本信息：winver
+- 展示 `windows` 系统版本信息：`winver`
+- 展示系统信息，如操作系统、硬件资源...：`msinfo32`
 
 我常用的基本就是上述命令了，如果想了解更多推荐阅读：[Window系统命令行调用控制面板程序](https://www.cnblogs.com/lsgxeva/p/8426893.html)
 
