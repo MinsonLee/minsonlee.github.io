@@ -9,7 +9,7 @@ function buildCTable() {
     var s = '';
     s += '<div style="clear:both"></div>';
     s += '<div class="toc">';
-    s += '<p style="text-align:right;margin:0;"><span style="float:left;">目录<a href="#" title="系统根据文章中H1到H6标签自动生成文章目录">(?)</a></span><a href="#" onclick="javascript:return openct(this);" title="展开">[+]</a></p>';
+    s += '<p style="text-align:right;margin:0;"><span style="float:left;">目录<a href="#">(?)</a></span><a href="#" onclick="javascript:return openct(this);" title="展开">[+]</a></p>';
     s += '<ol style="display:none;margin-left:14px;padding-left:14px;line-height:160%;">';
     var old_h = 0, ol_cnt = 0;
     for (var i = 0; i < hs.length; i++) {
@@ -35,8 +35,8 @@ function buildCTable() {
         tit = tit.replace(/[^a-zA-Z0-9_\-\s\u4e00-\u9fa5]+/g, '');
 
         if (tit.length < 100) {
-            s += '<li><a href="#t' + i + '">' + tit + '</a></li>';
-            hs.eq(i).html('<a name="t' + i + '"></a>' + hs.eq(i).html());
+            s += '<li><a href="#' + tit + '">' + tit + '</a></li>';
+            // hs.eq(i).html('<a name="' + tit + '"></a>' + hs.eq(i).html());
         }
     }
     while (ol_cnt > 0) {
