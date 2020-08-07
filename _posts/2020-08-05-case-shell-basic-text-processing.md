@@ -2,7 +2,7 @@
 layout: post
 title: "案例-Shell-文本处理：人人网访问记录分析"
 date: 2020-08-02
-tag: Shell,case
+tag: Shell
 ---
 
 ## 背景

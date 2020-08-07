@@ -2,7 +2,7 @@
 layout: post
 title: "Shell 收集"
 date: 2020-08-02
-tag: Shell,awk,sed,grep,xargs
+tag: Shell
 ---
 
 ## 批量重命名：使用管道，通过`sed`文本替换，实现批量重命名

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "`Composer`错误：更新 `vendor` 提示本地有变更 `The package has modified files`"
+title: "Composer 错误：更新 vendor 提示本地有变更: The package has modified files"
 date: 2020-07-31
-tag: PHP,composer
+tag: Composer
 ---
 ## 背景
 需要在测试环境维护一个稳定版本的全量项目包。写了一个脚部定时拉取最新的 `master` 分支代码，并自动更新对应的子模块。由于前期的 `.gitignore` 文件规范没处理好，因此导致了 `composer` 自动更新 `vendor` 的问题一直卡住，导致了 `vendor` 一直处于原始版本。

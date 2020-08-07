@@ -2,7 +2,7 @@
 layout: post
 title: "Composer错误：out of memory errors"
 date: 2020-05-25
-tag: PHP,composer
+tag: Composer
 ---
 ## 背景
 本地仓库依赖了很多`composer`包，执行`composer update`更新本地的包版本时遇到报错，信息如下：
