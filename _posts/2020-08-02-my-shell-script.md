@@ -39,7 +39,7 @@ find /data/htdocs_deploy/all_project/ -maxdepth 1 -type d -mtime +30 -name "feat
 - `-type d` --设置查找的类型为文件；其中`f`为文件，`d`则为文件夹
 - `-name "*"` --设置文件名称，可以使用通配符；
 - `-exec rm -rf {}` --查找完毕后执行删除操作，`{}`表示变量；
-- `\;` --固定写法
+- `\;` --固定写法，标识 `-exec` 命令结束
 
 ## 对指定目录下的所有文件，进行匹配查找
 ```sh
@@ -60,6 +60,35 @@ grep "server_name" -r <patn> -n
 tree -L n
 ```
 - `-L n` 指定打印目录层级
+
+## 递归删除空目录
+![tree empty dir](/images/article/linux-tree-empty-dir.png)
+```shell
+#!/usr/bin/bash
+# author:limingshuang
+# description:递归删除空目录
+# error:
+#     1 - 检查目录缺失
+#     2 - 输入路径非目录文件
+
+if [ -z $1 ];
+then
+    echo "请输入需要检查的目录路径"
+    exit 1
+fi
+
+if [ ! -d $1 ];
+then
+    echo "输入路径不是一个目录！！！"
+    exit 2
+fi
+
+while [ `find $1 -depth -empty -type d | wc -l` -ne 0 ];
+do
+    find $1 -depth -empty -type d -delete
+done
+```
+![delete empty dir](/images/article/linux-receive-delete-empty-dir.png)
 
 ## 查看系统用户登录日志
 ```sh
