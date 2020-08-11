@@ -476,6 +476,10 @@ img::-moz-selection {
     line-height: 1.4;
     margin: 10px 0 5px;
     padding-top: 10px;
+    border-left: 6px solid #79a5ff;
+    background: white;
+    box-shadow: none;
+    border-radius: unset;
   }
   .post h4 {
     font-weight: 700;
