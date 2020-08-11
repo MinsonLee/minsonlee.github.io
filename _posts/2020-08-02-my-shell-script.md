@@ -38,12 +38,16 @@ find /data/htdocs_deploy/all_project/ -maxdepth 1 -type d -mtime +30 -name "feat
 - `-mtime +30` --设置修改时间为30天前；(`-atime`-最后访问时间；`-ctime`-创建时间)
 - `-type d` --设置查找的类型为文件；其中`f`为文件，`d`则为文件夹
 - `-name "*"` --设置文件名称，可以使用通配符；
-- `-exec rm -rf {}` --查找完毕后执行删除操作，`{}`表示变量；
-- `\;` --固定写法，标识 `-exec` 命令结束
+- `-exec rm -rf {} \;` --查找完毕后对每一行记录执行删除操作，`{}`表示变量；
+- `-exec rm -rf {} \+` --查找完毕后将所有记录作为一个参数传递到`rm`命令中，执行一次命令 
 
 ## 对指定目录下的所有文件，进行匹配查找
 ```sh
 find <path> -type f -name ".*.conf" | xargs grep "server_name"
+
+或
+
+find <path> -type f -name ".*.conf" -exec 'grep "server_name"'
 ```
 
 等价于
@@ -54,7 +58,28 @@ grep "server_name" -r <patn> -n
 # -n 显示行编号
 ```
 
+## 遍历目录，对config_center目录执行composer更新
+![tree fo config_center](/images/article/linux-tree-coinfig_center.png)
+### 通过 `find-exec`方式
+```sh
+find <path> -maxdepth 2 -type d -name "config_center" -exec bash -c "cd {} && /apps/xxx/bin/php /apps/xxx/composer update --no-dev" \;
+```
+
+### 通过`find|xargs`方式
+```sh
+find <path> -type d -maxdepth 2 -name config_center | xargs -t -L 1 bash -c 'cd "$0" && /apps/xxx/bin/php /apps/xxx/composer update --no-dev'
+```
+
+### 通过通配符方式进入`config_center`
+```sh
+find <path>/*/config_center -type d -maxdepth 0 | xargs -t -L 1 bash -c 'cd "$0" /apps/xxx/bin/php /apps/xxx/composer update --no-dev'
+```
+- `bash -c <string>`： If the `-c` option is present, then commands are read from string.  If there are arguments after the string, they are assigned to the positional parameters, starting with `$0`.
+
+
+
 ## 树状打印目录层级
+
 - `tree`打印指定目录层级
 ```sh
 tree -L n
