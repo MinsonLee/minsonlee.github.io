@@ -41,6 +41,19 @@ find /data/htdocs_deploy/all_project/ -maxdepth 1 -type d -mtime +30 -name "feat
 - `-exec rm -rf {} \;` --查找完毕后对每一行记录执行删除操作，`{}`表示变量；
 - `-exec rm -rf {} \+` --查找完毕后将所有记录作为一个参数传递到`rm`命令中，执行一次命令 
 
+## 通过`awk`实现批量重命名并归档文件
+将所有文件下的`.avi`文件移动到当前目录下，并将文件`xxx.avi`统一命名为`文件名称.avi`的方式
+
+![linux-tree-awk-mv-file](/images/article/linux-tree-awk-mv-file.png)
+
+```sh
+find -type f -name *.avi | awk -F"/" '{print "mv \""$0"\" \""$2".avi\""}'|sh
+```
+- 先通过 `find`命令查询匹配出所有的`.avi`文件，因为文件名有重复，因此需要额外进行文本提取再执行`mv`
+- 通过 `awk` 进行文本提取，但是 `awk` 本身无法调用执行 `mv`，因此此处通过`print`出完整的`mv`命令
+- 由于文件名中可能含有空格等字符，因此`mv`需要将后续的路径作为一个完整的整体看待
+- 通过管道将`mv`命令传递给`sh`进行调用执行
+
 ## 对指定目录下的所有文件，进行匹配查找
 ```sh
 find <path> -type f -name ".*.conf" | xargs grep "server_name"
