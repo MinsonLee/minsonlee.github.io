@@ -6,7 +6,7 @@ description: Welcome To My WebSite !
 avatarTitle: Minson
 # 头像里面的描述
 avatarDesc: PHP / Git
-url: "https://minsonlee.github.io/"
+url: "https://minsonlee.github.io"
 
 # Comment
 #comment:
@@ -42,7 +42,7 @@ social:
 # 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
 
 
-permalink: /:year/:month/:title/
+permalink: /:year/:month/:title
 # Format
 highlighter: rouge
 
@@ -65,5 +65,5 @@ nav:
 # Pagination
 gems: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
-paginate_path: "page/:num/"
+paginate_path: "page/:num"
 
