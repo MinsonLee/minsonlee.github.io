@@ -8,7 +8,7 @@ tag: Git
 ## Git中的分区
 > 先上一张镇楼图,详细的讲解可以看[05.三张图了解Git工作原理](https://minsonlee.github.io/2018/04/05.git-theory)
 
-![Git life cycle](https://img.mubu.com/document_image/bf250bc8-110e-4660-a0fd-85dbfb4c356b-747865.jpg)
+![Git life cycle](/images/article/git/git-life-cycle.jpg)
 
 上图已经非常清晰的阐述了Git中的各个分区,以及他们之间是如何配合工作的！
 
@@ -94,10 +94,12 @@ $ git status
 ```
 ![git status](/images/article/git/git-status-en.png)
 
-- 查看当前工作区中冲突了文件
+- 查看当前工作区【即：改动文件】文件的简要信息
 ```sh
 $ git status -s
 ```
+![git status -s](/images/article/git/git-status-short.png)
+
 
 
 ### 暂存区
