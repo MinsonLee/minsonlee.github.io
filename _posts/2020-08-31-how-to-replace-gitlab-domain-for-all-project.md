@@ -2,11 +2,12 @@
 layout: post
 title: "Shell：批量替换Gitlab仓库remote地址"
 date: 2020-08-31
-tag: Shell,实战
+tags: Shell 实例记录
 ---
 
 ## 安装shell格式化json工具
-> 参考阅读：[http://openskill.cn/article/357](http://openskill.cn/article/357)
+参考阅读：[http://openskill.cn/article/357](http://openskill.cn/article/357)
+
 ```shell
 # 安装
 yum -y install jq
@@ -15,7 +16,9 @@ yum -y install jq
 ```
 
 ## 利用GitLab API 获取所有仓库的git分支
-> [GitLab API 地址](https://docs.gitlab.com/ee/api/groups.html#list-a-groups-shared-projects)
+因为发现直接调用GitLab API获取拥有git仓库，得到的结果不完整，因此此处分开多个组进行获取。
+[GitLab API 文档地址](https://docs.gitlab.com/ee/api/groups.html#list-a-groups-shared-projects)
+
 ### 新建一个PRIVATE-TOKEN
 1. 点击当前用户头像，进入`Setting`
 2. 找到：`Access Tokens`，链接地址应该为：`https://<gitlab-host>/profile/personal_access_tokens`
@@ -25,11 +28,11 @@ yum -y install jq
 !!!注意：用完`Access Tokens`记得删除，如需长期使用注意备份和保存安全！
 
 ### 获取每个分组下的git仓库地址
-> 因为发现直接调用GitLab API获取拥有git仓库，得到的结果不完整，因此此处分开多个组进行获取
 
 ```shell
 curl --header "PRIVATE-TOKEN: QHStkxyyNyhwAbywqaf3" 'https://<gitlab-localhost>/api/v4/groups/world-stage?simple=true&per_page=200' 
 ```
+
 API接口返回结构如下：
 ```json
 {
@@ -111,19 +114,22 @@ API接口返回结构如下：
   "shared_projects": []
 }
 ```
+
 从上述结构可以看出，GitLab API 返回的信息其实很多在本次需求中是没有作用的，实际信息我们只需要得到 `ssh_url_to_repo`字段信息即可。
 因此此处结合`jq-格式化JSON`、`grep-匹配字段`和`awk-处理分割字段`对结果进行处理，只获取`ssh_url_to_repo`即可。
+
 完整处理如下：
 ```shell
-curl --header "PRIVATE-TOKEN: QHStkxyyNyhwAbywqaf3" 'https://niubibi.qeeq.cn/api/v4/groups/world-stage?simple=true&per_page=200' | jq . | grep ssh_url_to_repo | awk -F"\"" '{print $4}' > /tmp/test.json
+curl --header "PRIVATE-TOKEN: QHStkxyyNyhwAbywqaf3" 'https://niubibi.qeeq.cn/api/v4/groups/world-stage?simple=true&per_page=200' | jq . | grep ssh_url_to_repo | awk -F"\"" '{print $4}' >> /tmp/test.json
 ```
 
-![gitlab-api-demo-get-ssh_url_to_repo-info](../images/article/gitlab-api-demo-get-ssh_url_to_repo.png)
+![gitlab-api-demo-get-ssh_url_to_repo-info](/images/article/gitlab-api-demo-get-ssh_url_to_repo.png)
 
 ## 将所有远程仓库拉到本地
 需要注意的是：
 1. 如果不同`Groups`下`Git`仓库名相同，在`clone`过程中会出现覆盖，因此在`clone`的时候最好指定克隆岛对应的组的目录下
 2. 因为对项目的提交历史并不关注，因此此处使用最小粒度的克隆：只克隆`master`分支的最后一个`commit`信息
+
 ```shell
 #! /usr/bin/bash
 remote=(
@@ -145,13 +151,13 @@ done
 - `sort`：对结果进行顺序排序
 - `uniq`：对相邻结果进行去重操作处理
 - `sed`结合管道对结果进行处理
-```shell script
+
+```shell
 grep -Hr "niubibi.easyrentcars.com" --exclude-dir="\.git" --exclude-dir="vendor" --exclude="composer.lock" --exclude="README.md" | awk -F":" '{print $1}' | sort | uniq | xargs -L 1 sed -i 's/niubibi\.<old_root_domain>\.com/nibibi\.<new_root_domain>\.cn/g'
 ```
 
-
 ## 查看变更情况，自动提交信息并推到master分支
-```shell script
+```shell
 for pro in `ls /d/git-remote | grep '/'`
 do 
     cd "/d/git-remote/$pro"
