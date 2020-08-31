@@ -120,7 +120,7 @@ API接口返回结构如下：
 
 完整处理如下：
 ```shell
-curl --header "PRIVATE-TOKEN: QHStkxyyNyhwAbywqaf3" 'https://niubibi.qeeq.cn/api/v4/groups/world-stage?simple=true&per_page=200' | jq . | grep ssh_url_to_repo | awk -F"\"" '{print $4}' >> /tmp/test.json
+curl --header "PRIVATE-TOKEN: QHStkxyyNyhwAbywqaf3" 'https://<gitlab-localhost>/api/v4/groups/world-stage?simple=true&per_page=200' | jq . | grep ssh_url_to_repo | awk -F"\"" '{print $4}' >> /tmp/test.json
 ```
 
 ![gitlab-api-demo-get-ssh_url_to_repo-info](/images/article/gitlab-api-demo-get-ssh_url_to_repo.png)
@@ -153,7 +153,7 @@ done
 - `sed`结合管道对结果进行处理
 
 ```shell
-grep -Hr "niubibi.easyrentcars.com" --exclude-dir="\.git" --exclude-dir="vendor" --exclude="composer.lock" --exclude="README.md" | awk -F":" '{print $1}' | sort | uniq | xargs -L 1 sed -i 's/niubibi\.<old_root_domain>\.com/nibibi\.<new_root_domain>\.cn/g'
+grep -Hr "<old_gitlab_localhost>" --exclude-dir="\.git" --exclude-dir="vendor" --exclude="composer.lock" --exclude="README.md" | awk -F":" '{print $1}' | sort | uniq | xargs -L 1 sed -i 's/niubibi\.<old_root_domain>\.com/niubibi\.<new_root_domain>\.cn/g'
 ```
 
 ## 查看变更情况，自动提交信息并推到master分支
@@ -166,4 +166,50 @@ do
         git add . && git commit -m "refactor：替换仓库remote信息" && git push
     fi
 done
+```
+
+上述两步汇总脚本如下：
+
+```shell
+#! /usr/bin/bash
+project_path='/d/git-remote';
+if [ $1 ];then
+    project_path=$1;
+fi;
+
+function action()
+{
+    cd $1
+    # 过滤JAVA项目目录
+    if [[ `git log --invert-grep --grep="替换仓库remote信息" --oneline  --pretty=format:"%ce" -1 | grep -c heng` -eq 0 ]]
+    then
+        # 执行替换
+        grep -Hr "<old_gitlab_localhost>" --exclude-dir="\.git" --exclude-dir="vendor" --exclude="composer.lock" --exclude="README.md" $1 | awk -F":" '{print $1}' | sort | uniq | xargs -r -L 1 sed -i 's/<old_gitlab_localhost>/<new_gitlab_localhost>/g'
+    fi
+    # 提交信息
+    if [[  `git status -s | wc -l` -ne 0 ]]
+    then
+        echo $1 # 先确认仓库无误，再执行 push 操作
+        # git add . && git commit -m "refactor：替换仓库remote信息" && git push
+    fi
+}
+
+# 递归遍历处理目录
+function listDir()
+{
+    local project_path=$1;
+    for file in `ls $project_path`;
+    do
+        # 过滤前端目录
+        if [[ `echo $file | grep -c '\-static'` -eq 0 ]];then
+            if [ -d "$project_path/$file/.git" ];then
+                action $project_path/$file
+            elif [ -d "$project_path/$file" ];then
+                listDir $project_path/$file;
+            fi;
+        fi;
+    done;
+}
+
+listDir $project_path;
 ```
