@@ -213,3 +213,49 @@ function listDir()
 
 listDir $project_path;
 ```
+
+## 对旧仓库`remote`地址批量替换
+```shell
+#!/usr/bin/bash
+
+# 定义项目目录
+project_path='/d/htdocs';
+if [ $1 ];then
+    project_path=$1;
+fi;
+
+# 执行 Git 操作
+function action()
+{
+    cd $1 && git checkout master # 切到master分支
+    if [[ `git remote get-url --push origin | grep -c niubibi.easyrentcars.com` -eq 1  ]];then
+         # 修改仓库remote地址
+         git remote set-url origin `git remote get-url --push origin | sed 's/easyrentcars\.com/qeeq\.cn/'`
+         # 拉取本地仓库master分支代码
+         git fetch -pa $(git remote)
+    fi
+    # 更新子模块信息
+    if [ -f "$1/.gitmodules" ];then
+        git submodule sync && git submodule update --init --remote
+    fi;
+}
+
+# 遍历目录
+function listDir()
+{
+    local project_path=$1;
+    for file in `ls $project_path`;
+    do
+        if [ -d "$project_path/$file/.git" ];then
+            action $project_path/$file
+            if [ $file = "library" ];then
+                action $project_path/$file/erc-model
+            fi;
+        elif [ -d "$project_path/$file" ];then
+            listDir $project_path/$file;
+        fi;
+    done;
+}
+
+listDir $project_path;
+```
