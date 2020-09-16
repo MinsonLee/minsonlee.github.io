@@ -228,16 +228,21 @@ fi;
 function action()
 {
     cd $1 && git checkout master # 切到master分支
-    if [[ `git remote get-url --push origin | grep -c niubibi.easyrentcars.com` -eq 1  ]];then
+    if [[ `git remote get-url --push origin | grep -c niubibi.easyrentcars.com` -eq 1  ]]
+    then
          # 修改仓库remote地址
          git remote set-url origin `git remote get-url --push origin | sed 's/easyrentcars\.com/qeeq\.cn/'`
-         # 拉取本地仓库master分支代码
-         git fetch -pa $(git remote)
+         # featch本地仓库当前分支代码
+         git fetch $(git remote) $(git symbolic-ref --short -q HEAD):refs/remotes/$(git remote)/$(git symbolic-ref --short -q HEAD)
+         # pull 当前分支代码
+         git pull $(git remote) $(git symbolic-ref --short -q HEAD)
     fi
+
     # 更新子模块信息
-    if [ -f "$1/.gitmodules" ];then
+    if [ -f "$1/.gitmodules" ]
+    then
         git submodule sync && git submodule update --init --remote
-    fi;
+    fi
 }
 
 # 遍历目录
