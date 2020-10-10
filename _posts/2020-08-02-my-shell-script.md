@@ -85,7 +85,7 @@ find <path> -type d -maxdepth 2 -name config_center | xargs -t -L 1 bash -c 'cd 
 
 ### 通过通配符方式进入`config_center`
 ```sh
-find <path>/*/config_center -type d -maxdepth 0 | xargs -t -L 1 bash -c 'cd "$0" /apps/xxx/bin/php /apps/xxx/composer update --no-dev'
+find <path>/*/config_center -type d -maxdepth 0 | xargs -t -L 1 bash -c 'cd "$0" && /apps/xxx/bin/php /apps/xxx/composer update --no-dev'
 ```
 - `bash -c <string>`： If the `-c` option is present, then commands are read from string.  If there are arguments after the string, they are assigned to the positional parameters, starting with `$0`.
 
