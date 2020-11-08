@@ -2,7 +2,7 @@
 layout: post
 title: "01.WSL2 安装 Docker"
 date: 2020-11-07
-tag: Docker
+tags: [Docker,WSL2]
 ---
 ## 背景
 
@@ -266,6 +266,7 @@ docker-compose --version
 1. **设置开机自启服务异常**
 
 `WSL2`中设置开机`docker`服务自启，我尝试了使用注册列表、通过`VBScript`启动服务、创建文件夹，但是失败了！
+> 问题已解决，参考文章：[解决  WSL 开机启动服务](/2020/11/how-to-auto-start-service-on-boot-WSL2)
 
 2. **访问容器服务不方便**
 
