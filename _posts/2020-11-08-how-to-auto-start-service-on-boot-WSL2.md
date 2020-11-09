@@ -34,13 +34,15 @@ tag: WSL2
 3. **`PowerShell`如下**
 
 ```sh
+# -d Ubuntu-20.04 启动 Ubuntu-20.04 发行版
 # -u root 通过roo用户启动wsl
 # -e /etc/init.wsl 启动执行 /etc/init.wsl脚本
 
-wsl -u root -e /etc/init.wsl
+wsl -d Ubuntu-20.04 -u root -e /etc/init.wsl
 ```
 ![powershell 调用 wsl内部脚本](/images/article/do-wsl-script-on-powershell.png)
 
+> [设置 WSL 默认 Linux 发行版](/2020/11/WSL2-getting-started#设置子系统运行版本)
 
 ## 修改注册列表
 
