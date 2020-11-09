@@ -131,7 +131,7 @@ Get-Service LxssManager | Restart-Service
 
 ![Use the WSL 2 based engine](/images/article/docker-desktop-set-wsl.png)
 
-![Configure which WSL 2 distros you want to access Docker from](configure-which-wsl2-distros-you-want-to-access-Docker-from.png)
+![Configure which WSL 2 distros you want to access Docker from](/images/article/configure-which-wsl2-distros-you-want-to-access-Docker-from.png)
 
 现在你就可以在对应的子系统中玩 `Docker` 了，打开安装好的子系统，输入`docker info`就可以查看到对应的系统信息了.
 

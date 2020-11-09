@@ -48,6 +48,10 @@ wsl -u root -e /etc/init.wsl
 
 ![set regist service](/images/article/regedit-HKEY_LOCAL_MACHINE-RUN-init-wsl.png)
 
+事实上在下列两类注册表中添加上述脚本命令都是可以实现开机自动执行的
+- `计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` 开机不管是哪个用户登录都会被执行
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run` 当前用户登录被执行
+
 重启计算机即可发现，`WSL`中的对应的服务已经被启动！
 
 参考文章：
