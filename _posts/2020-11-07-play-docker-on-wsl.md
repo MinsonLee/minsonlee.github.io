@@ -87,34 +87,7 @@ Get-Service LxssManager | Restart-Service
 
 ## 推荐安装终端工具`Windows Terminal`
 
-`Windows`的命令行向来是已丑著称，`Windows Terminal`总算是挽救了一点它的颜值。
-
-![Windows Terminal](/images/article/windows-terminal.png)
-
-- 安装：https://github.com/microsoft/terminal
-- 使用指南：https://docs.microsoft.com/zh-cn/windows/terminal/customize-settings/global-settings
-- [如何给 Windows Terminal 增加一个新的终端](https://blog.csdn.net/WPwalter/article/details/100159481)
-
-下述是我将`Git-Bash`添加到`Windows Terminal`的配置
-
-```json
-{
-    // guid 可以通过网上查询 guid 生成器生成：http://tool.pfan.cn/guidgen
-    "guid": "{ce7a80b8-da75-4628-a2e1-663af0f3ce7c}", // 终端唯一标识号，用于设置`defaultProfile`-默认打开哪个终端
-    "name": "Git Bash", // 终端名称
-    "icon": "C:\\Self\\code\\CVS\\Git\\git-for-windows.ico", // 终端ICON图标路径
-    "commandline": "C:\\Self\\code\\CVS\\Git\\bin\\bash.exe", // 终端所在绝对路径
-    "startingDirectory":"D:\\htdocs", // 打开终端默认打开路径，如果为null则默认上一次退出时路径
-    "hidden": false, // 是否隐藏不展示
-    "useAcrylic" : true, // 是否使用磨砂效果
-    "acrylicOpacity" : 0.8, // 磨砂效果
-    "colorScheme" : "Campbell", // 配色方案
-    "cursorColor" : "#FFFFFD", // 光标颜色
-    "fontFace" : "Fira Code", // 终端字体
-    "backgroundImage":"C:\\Users\\Minso\\Pictures\\Camera Roll\\view.jpg", // 终端背景图
-    "backgroundImageOpacity":0.75, // 背景图透明度
-}
-```
+`Windows`的命令行向来是以丑著称，`Windows Terminal`总算是挽救了一点它的颜值。详细参考[此处](/2020/11/how-to-use-windows-terminal-gracefully)
 
 ## 方式一：`Docker Desktop`+`WSL2` 运行 Docker
 
@@ -122,8 +95,8 @@ Get-Service LxssManager | Restart-Service
 
 ### 下载安装`Docker Desktop`运行 `Docker`，可以让你在`Windows`中方便的管理配置`Docker`
 
-- Docker for Windows：https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe
-- Doecker for Mac：https://desktop.docker.com/mac/stable/Docker.dmg
+- Docker for Windows：[https://desktop.docker.com/win/stable/Docker Desktop Installer.exe](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
+- Doecker for Mac：[https://desktop.docker.com/mac/stable/Docker.dmg](https://desktop.docker.com/mac/stable/Docker.dmg)
 
 傻瓜式安装即可！
 
@@ -134,17 +107,6 @@ Get-Service LxssManager | Restart-Service
 ![Configure which WSL 2 distros you want to access Docker from](/images/article/configure-which-wsl2-distros-you-want-to-access-Docker-from.png)
 
 现在你就可以在对应的子系统中玩 `Docker` 了，打开安装好的子系统，输入`docker info`就可以查看到对应的系统信息了.
-
-#### 踩坑预警
-使用`docker info`打印信息时可能会遇到下述警告信息，提示网桥设置有问题。
-
-```text
-WARNING: bridge-nf-call-iptables is disabled
-WARNING: bridge-nf-call-ip6tables is disabled
-```
-
-![ bridge-nf-call-iptables is disabled](/images/article/error-bridge-nf-call-iptables-is-disable.png)
-
 
 ## 方式二：`WSL2`子系统中安装Docker
 
@@ -273,3 +235,5 @@ docker-compose --version
 由于每次重启`WSL`的网卡都会被重置，在公司的网络环境中`Docker`的IP网段也会不断的变化。
 因此，通过直接在`WSL2`中直接安装`docker`的方式，若在网络复杂的环境中在宿主机访问`WSL`内部容器服务需要自己手动变更`IP-Domain`绑定信息。
 如果通过`Docker Desktop`+`WSL2`的方式则不会有这样的问题，因为该方式`WSL2`内部访问的`daemom`服务仍然是`Windows`中，但该方式安装的`docker`文件挂载异常，偶尔会出现挂载目录为空的情况。
+
+> 问题已解决，参考文章：[解决 WSL 开机网卡信息变动问题](/2020/11/set-private-ip-for-wsl)
