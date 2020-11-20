@@ -1,4 +1,4 @@
-source 'https://gems.ruby-china.org'
+source 'https://mirrors.tuna.tsinghua.edu.cn/rubygems'
 gem 'jekyll'
 gem 'redcarpet'
 gem 'jekyll-paginate'

@@ -4,3 +4,5 @@ _site/
 .idea
 *.swp
 .Trashes
+.jekyll-cache/
+Gemfile.lock
