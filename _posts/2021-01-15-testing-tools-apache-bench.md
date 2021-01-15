@@ -2,10 +2,8 @@
 layout: post
 title: Web压测工具-ApacheBench（ab）
 date: 2021-01-15
-tags: [Tools,ab]
+tags: [Tools,ab,压力测试,高并发]
 ---
-
-## Apache Bench（ab）
 
 [`Apache Bench（ab）`](https://www.tutorialspoint.com/apache_bench/index.htm)是一个对`HTTP Web`服务器（**基于`HTTP/HTTPS`协议**）进行负载测试和基准测试的**开源免费、跨平台**的**单线程**命令行工具。
 
@@ -20,7 +18,7 @@ tags: [Tools,ab]
 
 因此：`ab` 更适合**单一`URL`**的非精准压力测试！
 
-### 安装
+## 安装
 
 ```sh
 # Ubuntu/Debian
@@ -34,15 +32,15 @@ yum -y install httpd-tools
 
 ![ab-verify-apache-bench-installation.png](/images/article/ab-verify-apache-bench-installation.png)
 
-### 使用说明
+## 使用说明
 
 `ab` 的功能定位都很简单，用法：`ab [options] [http[s]://]hostname[:port]/path`。
 
 ![ab-multiple-requests-testing.png](/images/article/ab-multiple-requests-testing.png)
 
-### 参数
+## 参数
 
-#### 请求设置
+### 请求设置
 
 | 参数 | 作用 |
 | ---- | ---- |
@@ -65,7 +63,7 @@ yum -y install httpd-tools
 | -p <postfile> |  `POST`请求的文件数据（**记得设置`-T`参数**） |
 | -u <putfile> |  `PUT`请求的文件数据 （**记得设置`-T`参数**） |
 
-#### 打印结果
+### 打印结果
 
 | 参数 | 作用 |
 | ---- | ---- |
@@ -82,9 +80,9 @@ yum -y install httpd-tools
 | -e <filename> | 将请求进度-百分比数据输出到文件（颇为鸡肋） |
 | -r | 不要在socket接收错误时退出 |
 
-### 结果分析
+## 结果分析
 
-#### 服务器信息
+### 服务器信息
 
 - **Server Software** - `Web`服务器的名称，对应`HTTP Respone Headers`中`Server`的值，因此该值不一定有或正确
 - **Server Hostname** - 服务器主机名
@@ -93,12 +91,12 @@ yum -y install httpd-tools
 - **Server Temp Key** - 服务器临时密钥信息（不一定有该结果）
 - **TLS Server Name** - 公钥服务器名称
 
-#### 传输信息
+### 传输信息
 
 - **Document Path** - 测试的页面路径
 - **Document Length** - 页面大小
 
-#### （重点）压测结果
+### （重点）压测结果
 
 - **Concurrency Level** - 并发数（同一时间发起的）
 - **Time taken for tests** - 整个测试过程的耗时
@@ -111,7 +109,7 @@ yum -y install httpd-tools
 - **Time per request（across all concurrent requests）** - 服务器平均等待时间 = 总时间-`Time taken for tests` / 成功总请求数-`Complete requests`
 - **Transfer rate** - 平均网络传输流量（可以帮助排除是否存在网络流量过大导致响应时间延长的问题）
 
-#### 网络连接耗时-毫秒
+### 网络连接耗时-毫秒
 
 > 格式：最小值、平均值、中位数、最大值
 
