@@ -2,7 +2,7 @@
 layout: post
 title: curl 和 wget 的使用和区别
 date: 2021-01-07
-tags: [Linux Tools,cURL,wget]
+tags: [Tools,cURL,wget]
 ---
 
 ## 简介
