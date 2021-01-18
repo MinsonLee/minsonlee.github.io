@@ -1,5 +1,5 @@
 # Basic
-title: MinsonLee
+title: MinsonLee's Blog
 subtitle: WebSite
 description: Welcome To My WebSite !
 # 头像里面的标题
@@ -17,7 +17,7 @@ url: "https://minsonlee.github.io"
 social:
     weibo: 2434729284 
     github: MinsonLee
-    #twitter: lms.minsonlee@gmail.com
+    twitter: lms.minsonlee@gmail.com
     mail: lms.minsonlee@gmail.com
 
 # 百度统计 
