@@ -1,6 +1,6 @@
 ---
 layout: post
-title: `MySQL` 命令行神器 - `mycli`
+title: MySQL命令行神器-mycli
 date: 2021-01-20
 tags: [Tools,mysql]
 ---
@@ -30,7 +30,7 @@ pip --version
 pip install mycli
 ```
 
-![mycli-install-verify.png](images/article/mycli-install-verify.png)
+![mycli-install-verify.png](/images/article/mycli-install-verify.png)
 
 `MyCLI` 对应文档，个人觉得是非常好：简单、明了！没有像其他手册一样，长篇大论，一股脑子输出，详细使用可查看下述文档或输入 `mycli --help` 查看帮助说明，不再赘述！
 

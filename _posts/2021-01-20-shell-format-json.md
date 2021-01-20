@@ -17,10 +17,10 @@ tags: [Tools,json,jq]
 
 正如 [`jq` 的官网](https://stedolan.github.io/jq/)所说：`jq`是一个用 `C` 语言编写的独立没有任何依赖的开源工具，你可以使用 `jq` 来切割、过滤、映射和转换 `JSON` 结构化数据，而可以用 `sed`、`awk`、`grep`更加轻松、专注、友好的处理文本。
 
-- `jq` 的官网：https://stedolan.github.io/jq/
-- `jq` 的指南：https://stedolan.github.io/jq/tutorial/
-- `jq` 的手册：https://stedolan.github.io/jq/manual/
-- `jq` 的安装：https://stedolan.github.io/jq/download/ 【安装完毕后可以通过 `jq -V` 验证是否安装成功】
+- `jq` 的官网：[https://stedolan.github.io/jq/](https://stedolan.github.io/jq/)
+- `jq` 的指南：[https://stedolan.github.io/jq/tutorial/](https://stedolan.github.io/jq/tutorial/)
+- `jq` 的手册：[https://stedolan.github.io/jq/manual/](https://stedolan.github.io/jq/manual/)
+- `jq` 的安装：[https://stedolan.github.io/jq/download/](https://stedolan.github.io/jq/download/) 【安装完毕后可以通过 `jq -V` 验证是否安装成功】
 
 
 ## 使用
