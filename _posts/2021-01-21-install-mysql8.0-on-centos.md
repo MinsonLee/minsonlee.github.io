@@ -36,7 +36,7 @@ yum install devtoolset-8-toolchain -y
 echo "source /opt/rh/devtoolset-8/enable" >>/etc/profile
 ```
 
-## 2. 创建对应`mysql`用户&&用户组及目录
+## 2. 创建对应`mysql`用户&&用户组
 
 ```sh
 # 1. 创建`mysql`用户组
