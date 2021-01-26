@@ -2,7 +2,7 @@
 layout: post
 title: MySQL命令行神器-mycli
 date: 2021-01-20
-tags: [Tools,mysql]
+tags: [Tools,MySQL]
 ---
 
 `MySQL` 的客户端很多首推 `Navicat`，但工作中总是避免不了要在漆黑的命令行下操作 `MySQL`，使用其自带的 `mysql-client` 工具体验并不算太好。
