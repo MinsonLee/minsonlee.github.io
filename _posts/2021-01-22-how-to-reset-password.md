@@ -5,11 +5,11 @@ date: 2021-01-22
 tags: [MySQL]
 ---
 
-在安装`MySQL`的过程中有一个初始化数据库的操作：`mysqld --initialize`或`mysqld --initialize --console`，这个操作中会生成一个 `MySQL` 用户：`root@localhost`，同时还有其初始化密码，要记下！要记下！要记下！
+在安装 `MySQL` 的过程中有一个初始化数据库的操作：`mysqld --initialize`或`mysqld --initialize --console`，这个操作中会生成一个 `MySQL` 用户： `root@localhost`，同时还有其初始化密码，要记下！要记下！要记下！
 
 ## MySQL 8 忘记密码
 
-在`MySQL 8`之前的旧版本是可以通过 `MySQL安装目录`》`data目录`》`xxx.err文件`，使用编辑器打开，搜索关键字 `temporary password` 查询初始密码，但是在`MySQL 8`及其以后的版本中这个 `log` 没有再记录该初始密码了！
+在 `MySQL 8` 之前的旧版本是可以通过 `MySQL安装目录`》`data目录`》`xxx.err文件`，使用编辑器打开，搜索关键字 `temporary password` 查询初始密码，但是在 `MySQL 8` 及其以后的版本中这个 `log` 没有再记录该初始密码了！
 
 同时，直接使用 `mysqld --skip-grant-tables` 操作也不能直接实现免密登录操作了，需要利用 `init-file` 参数解决，如下！
 
@@ -33,9 +33,9 @@ mysqld –init-file=/tmp/pwd-reset &
 mysql -uroot -ptest
 ```
 
-**注意： `mysql -ppassword` 表示 `password`是密码部分；`mysql -p xxx`表示需要用户手动输入密码，然后默认进入到`xxx`数据库-相当于登录之后默认执行一句：`use xxx;`进行切换数据库**
+**注意： `mysql -ppassword` 表示 `password` 是密码部分；`mysql -p xxx`表示需要用户手动输入密码，然后默认进入到 `xxx` 数据库-相当于登录之后默认执行一句：`use xxx;`进行切换数据库**
 
-4. 查看 `root` 用户有哪些`host`
+4. 查看 `root` 用户有哪些 `host`
 
 ![select users](/images/article/mysql-select-root-in-mysql.user.png)
 
@@ -56,7 +56,7 @@ flush privileges;
 
 ## 注意事项
 
-1. **`MySQL 8` 已经废弃了 `PASSWORD()` 函数改用了 `IDENTIFIED BY 'newPassWord'` 的方式生成加密密码，因此旧版本的设置密码方式不可行了！**
+1. ** `MySQL 8` 已经废弃了 `PASSWORD()` 函数改用了 `IDENTIFIED BY 'newPassWord'` 的方式生成加密密码，因此旧版本的设置密码方式不可行了！**
 
 [官方重置密码文档]([https://dev.mysql.com/doc/refman/8.0/en/set-password.html)提供了两种方式：
 
@@ -72,7 +72,7 @@ flush privileges;
 要[关闭 `Password Expiration Policy` 机制](https://dev.mysql.com/doc/refman/8.0/en/password-management.html#password-expiration-policy)，也提供了两个方式：
 
 - 方式1-修改单用户密码永不过期 `ALTER USER 'user'@'host' PASSWORD EXPIRE NEVER`
-- 方式2-修改`my.cnf`配置文件，全局设置用户密码不过期
+- 方式2-修改 `my.cnf` 配置文件，全局设置用户密码不过期
 
 ```conf
 [mysqld]
