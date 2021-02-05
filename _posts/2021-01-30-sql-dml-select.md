@@ -227,8 +227,7 @@ SELECT goods_id, goods_name, (market_price - shop_price) as diff_price FROM `goo
 
 测试表 `goods` 中，`market_price` 和 `shop_price` 都是非负小数：`DECIMAL UNSIGNED`，而 `(market_price - shop_price)` 可能会出现负数，因此在数据库严格模式下这个运算可能会出现报错，如下图：
 
-![mysql-error-DECIMAL-UNSIGNED-value-is-out-of-range-in-goods](/_posts/2021-01-30-sql-dml-select.md
-images/article/mysql-error-DECIMAL-UNSIGNED-value-is-out-of-range-in-goods.png)
+![mysql-error-DECIMAL-UNSIGNED-value-is-out-of-range-in-goods](/images/article/mysql-error-DECIMAL-UNSIGNED-value-is-out-of-range-in-goods.png)
 
 解决方法有如下几种：
 
@@ -314,9 +313,10 @@ select name,count(score < 60) as num ,avg(score) as average from result group by
 
 ![mysql-demo-count-*-table-result](/images/article/mysql-demo-count-all-table-result.png)
 ![mysql-demo-count-column-table-result](/images/article/mysql-demo-count-column-table-result.png)
+![mysql-demo-count-0-table-result](/images/article/mysql-demo-count-0-table-result.png)
 ![mysql-demo-count-distinct-column-table-result](/images/article/mysql-demo-count-distinct-column-table-result.png)
 ![mysql-demo-count-1-table-result](/images/article/mysql-demo-count-1-table-result.png)
-![mysql-demo-count-0-table-result](/images/article/mysql-demo-count-0-table-result.png)
+
 
 从上述图可以看出：`COUNT()` 函数只要不涉及列，那么返回的都是所有行记录，如果表达式涉及了列那么会过滤掉 `NULL` 记录（因为 `NULL` 表示什么都没有，不能做比较）！
 
