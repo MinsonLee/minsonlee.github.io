@@ -2,7 +2,7 @@
 layout: post
 title: 数据库知识小记
 date: 2021-01-30
-tags: [MySQL,SQL]]
+tags: [MySQL,SQL]
 ---
 
 概念是对事物的特征描述，理解数据库的概念对掌握数据库的使用、学习有很大帮助！
