@@ -102,7 +102,7 @@ select goods_id,goods_name,shop_price from goods where goods_name not like '诺�
 
 ## `NULL` 值的判断
 
-`NULL` 表示的是什么都没有，它与空字符串、0 这些是不等价的，是不能用于比较的！
+`NULL` 字面上表示的是什么都没有，在 SQL 中表示一个未知的不确定类型值，它与空字符串、0 这些是不等价的，是不能用于比较的！
 如： `<expr> = NULL` 、 `NULL = ''` 得到的结果为 `false`，判断 `NULL` 必须使用 `IS NULL` 或 `IS NOT NULL` 进行判断。
 
 如下图，在 `result` 表中插入一条含有 `NULL` 值的数据，进行演示！
