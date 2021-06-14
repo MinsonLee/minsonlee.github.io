@@ -214,18 +214,3 @@ padding-top: 8px;
   border:none;
   border-top:3px dotted #185598;
 }
-
-.end {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    line-height: 26px;
-    color: blue;
-    text-align: center;
-    font-weight: 900;
-}
-
-#nice hr {
-   height:3px;
-  border:none;
-  border-top:3px dotted #185598;
-}
