@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 费曼学习法
+title: 6月跑步闲谈
 date: 2021-06-16
 tags: [有话明说]
 ---
