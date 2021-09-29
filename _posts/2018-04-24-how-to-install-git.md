@@ -66,6 +66,8 @@ $ git --version # 有版本信息则证明安装成功
 1. 点击[此处](https://git-scm.com/download/win)下载Git
 2. "傻瓜式下一步安装法"安装即可！
 
+`git update-git-for-windows` 可以直接一键式更新 Git 到最新版本。这是我觉得 Git 在 Windows 下操作最棒的了
+
 ## 5.基础设置
 > Git是为了进行"协同开发"而设计的版本控制系统,那在使用前你总要告诉Git最基本的信息吧:你是谁？出了问题如何才能联系到你?
 
