@@ -41,8 +41,3 @@ $ git show Blob的SHA-1哈希值
  - [Git 内部原理 - 底层命令和高层命令](https://git-scm.com/book/zh/v2/Git-内部原理-底层命令和高层命令)
  - [Git 内部原理 - Git 对象](https://git-scm.com/book/zh/v2/Git-内部原理-Git-对象)
  - [Git 内部原理 - Git 引用](https://git-scm.com/book/zh/v2/Git-内部原理-Git-引用)
-
-转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
-
-扫描下方二维码，关注公众号，接收更多实时内容
-![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)

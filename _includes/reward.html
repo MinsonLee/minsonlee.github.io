@@ -1,5 +1,16 @@
 <section>
-
+            <p style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+              转载请声明出处:
+              <a href="{{ page.url }}">MinsonLee的博客:{{ site.url }}</a>
+            </p>
+            <div class="content-code">
+              <p style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+                扫描下方二维码，关注公众号，接收更多实时内容
+              </p>
+              <div>
+                <img src="/images/article/WeChat/qrcode.png" alt="{{ site.officialAccounts }}">
+              </div>
+            </div>
             <div class="content-play">
               <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏一个呗</a></p>
               <div class="hide_box-play"></div>
@@ -39,6 +50,7 @@
             <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
 
             <style type="text/css">
+              .content-code img {border:none;border-width:0;margin: 5px auto;}
               .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
               .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
               .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}

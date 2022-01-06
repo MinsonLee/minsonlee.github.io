@@ -206,8 +206,3 @@ $ git commit -am "message"
 # 该命令会将当前的提交和上一次(最近一次)提价整合作为一个提交
 $ git commit [ -am "new message"] --amend
 ```
-
-转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
-
-扫描下方二维码，关注公众号，接收更多实时内容
-![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)
