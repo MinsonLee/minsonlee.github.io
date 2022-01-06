@@ -82,8 +82,3 @@ $ git push -u master:master
 - [廖雪峰的官网:Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 **如果你是刚刚学习Git,比较建议你停下实际动手操作使用一下Git,如果你使用Git时间不久,比较建议你把前面的推荐阅读都看一下,然后继续回来看一下后面的内容!!!**
-
-转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
-
-扫描下方二维码，关注公众号，接收更多实时内容
-![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)

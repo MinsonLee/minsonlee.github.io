@@ -112,9 +112,3 @@ tag: SEO
 ![搜索结果域名限定.png](/images/article/seo-filter-site.png)
 
 但是这个指令只能过滤一个站点出来，却没有像`intitle:`-`allintitle:`这样可以过滤多个站点，实属遗憾，是吧？
-
-扫描下方二维码，关注公众号，接收更多实时内容
-
-![关注公众号：Leaders工作室](/images/article/WeChat/Leaders.png)
-
-转载请声明出处:[MinsonLee的博客:https://minsonlee.github.io](https://minsonlee.github.io)
