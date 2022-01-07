@@ -22,7 +22,7 @@ tags: [Tools,Editor,VIM]
 
  好了，现在请确定您的Shift-Lock(大小写锁定键)还没有按下，然后按键盘上的字母键 j 足够多次来移动光标，直到第一节的内容能够完全充满屏幕。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 
 <h3 class="vim-title">第一讲第一节：移动光标</h3>
 
@@ -45,7 +45,7 @@ tags: [Tools,Editor,VIM]
 
 **提示：光标键应当也能正常工作的。但是使用`h`、`j`、`k`、`l`键，在习惯之后您就能够更快地在屏幕内四处移动光标。真的是这样！**
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 
 <h3 class="vim-title">第一讲第二节：VIM的进入和退出</h3>
 
@@ -58,7 +58,7 @@ tags: [Tools,Editor,VIM]
 **提示： `:q!` `<Enter>` 会丢弃您所做的任何改动。几讲之后您将学会如何保存改动到文件。**
 5. 将光标下移到第一讲第三节。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第一讲第三节：文本编辑之删除</h3>
 
 **\*\*在正常(Normal)模式下，可以按下 x 键来删除光标所在位置的字符。\*\***
@@ -76,7 +76,7 @@ tags: [Tools,Editor,VIM]
 
 **特别提示：在浏览本教程时，不要强行记忆。记住一点：在使用中学习。**
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第一讲第四节：文本编辑之插入</h3>
 
 **\*\* 在正常模式下，可以按下 i 键来插入文本。\*\***
@@ -93,7 +93,7 @@ tags: [Tools,Editor,VIM]
 
 如果您对文本插入操作已经很满意，请接着阅读下面的第一讲第五节。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第一讲第五节：文本编辑之添加</h3>
 
 **\*\* 按 A 键以添加文本。 \*\***
@@ -112,7 +112,7 @@ tags: [Tools,Editor,VIM]
 
 请继续学习第一讲第六节。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第一讲第六节：编辑文件</h3>
 
 **\*\* 使用 :wq 以保存文件并退出。 \*\***
@@ -126,7 +126,7 @@ tags: [Tools,Editor,VIM]
 5. 如果您在步骤1中已经退出 `vimtutor`，请重启 `vimtutor` 移动到下面的小结一节。
 6. 阅读完以上步骤，弄懂它们的意义，然后在实践中进行练习。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第一讲小结</h3>
 
 1. 光标在屏幕文本中的移动既可以用箭头键，也可以使用 `hjkl` 字母键： h (左移) j (下行)       k (上行)     l (右移)
@@ -141,7 +141,7 @@ tags: [Tools,Editor,VIM]
 
 好了，第一讲到此结束。下面接下来继续第二讲的内容。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第二讲第一节：删除类命令</h3>
 
 **\*\* 输入 dw 可以从光标处删除至一个单词的末尾。\*\***
@@ -159,7 +159,7 @@ tags: [Tools,Editor,VIM]
 重复步骤3和步骤4，直至句子修正完毕。接着继续第二讲第二节内容。
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第二讲第二节：更多删除类命令</h3>
 
 **\*\* 输入 d$ 从当前光标删除到行末。\*\***
@@ -176,7 +176,7 @@ tags: [Tools,Editor,VIM]
 请继续学习第二讲第三节就知道是怎么回事了。
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第二讲第三节：关于命令和对象</h3>
 
 
@@ -195,7 +195,7 @@ tags: [Tools,Editor,VIM]
 
 **特别提示： 对于勇于探索者，请在正常模式下面仅按代表相应动作的键而不使用操作符，您将看到光标的移动正如上面的对象列表所代表的一样。**
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第二讲第四节：使用计数指定动作</h3>
 
 
@@ -214,7 +214,7 @@ tags: [Tools,Editor,VIM]
 请继续学习第二讲第五节。
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第二讲第五节：使用计数以删除更多</h3>
 
 
@@ -230,7 +230,7 @@ tags: [Tools,Editor,VIM]
 --->  this ABC DE line FGHI JK LMN OP of words is Q RS TUV cleaned up.
 ```
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第二讲第六节：操作整行</h3>
 
 
@@ -253,7 +253,7 @@ tags: [Tools,Editor,VIM]
 --->  7)  And so are you.
 ```
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第二讲第七节：撤消类命令</h3>
 
 
@@ -273,7 +273,7 @@ tags: [Tools,Editor,VIM]
 
 这些都是非常有用的命令。下面是第二讲的小结了。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第二讲小结</h3>
 
 
@@ -292,7 +292,7 @@ tags: [Tools,Editor,VIM]
 9. 欲撤消以前的撤消命令，恢复以前的操作结果，请输入：`CTRL-R`
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第三讲第一节：置入类命令</h3>
 
 
@@ -312,7 +312,7 @@ tags: [Tools,Editor,VIM]
 ```
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第三讲第二节：替换类命令</h3>
 
 
@@ -332,7 +332,7 @@ tags: [Tools,Editor,VIM]
 
 特别提示：切记您要在使用中学习，而不是在记忆中学习。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第三讲第三节：更改类命令</h3>
 
 
@@ -353,7 +353,7 @@ tags: [Tools,Editor,VIM]
 
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第三讲第四节：使用c更改更多</h3>
 
 
@@ -371,7 +371,7 @@ tags: [Tools,Editor,VIM]
 ```
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第三讲小结</h3>
 
 
@@ -384,7 +384,7 @@ tags: [Tools,Editor,VIM]
 
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第四讲第一节：定位及文件状态</h3>
 
 **\*\* 输入 CTRL-G 显示当前编辑文件中当前光标所在行位置以及文件状态信息。输入大写 G 则直接跳转到文件中的某一指定行。\*\***
@@ -397,7 +397,7 @@ tags: [Tools,Editor,VIM]
 3. 输入您曾停留的行号，然后输入大写 G。这样就可以返回到您第一次按下 CTRL-G 时所在的行了。
 4. 如果您觉得没问题的话，请执行步骤1至步骤3的操作进行练习。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第四讲第二节：搜索类命令</h3>
 
 
@@ -415,7 +415,7 @@ tags: [Tools,Editor,VIM]
 
 提示：如果查找已经到达文件末尾，查找会自动从文件头部继续查找，除非 'wrapscan' 选项被复位。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第四讲第三节：配对括号的查找</h3>
 
 
@@ -435,7 +435,7 @@ tags: [Tools,Editor,VIM]
 
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第四讲第四节：替换命令</h3>
 
 
@@ -453,7 +453,7 @@ tags: [Tools,Editor,VIM]
 ---> thee best time to see thee flowers is in thee spring.
 ```
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第四讲小结</h3>
 
 
@@ -482,7 +482,7 @@ tags: [Tools,Editor,VIM]
    - 在文件内替换所有的字符串 old 为新的字符串 new，请输入  :%s/old/new/g
    - 进行全文替换时询问用户确认每个替换需添加 c 标志        :%s/old/new/gc
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第五讲第一节：在 VIM 内执行外部命令的方法</h3>
 
 
@@ -497,7 +497,7 @@ tags: [Tools,Editor,VIM]
 **提示：所有的 `:` 命令都必须以敲 <回车> 键结束。从今以后我们就不会总是提到这一点了。**
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第五讲第二节：关于保存文件的更多信息</h3>
 
 
@@ -515,7 +515,7 @@ tags: [Tools,Editor,VIM]
 
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第五讲第三节：一个具有选择性的保存命令</h3>
 
 
@@ -530,7 +530,7 @@ tags: [Tools,Editor,VIM]
 **提示：按 v 键使 Vim 进入可视模式进行选取。您可以四处移动光标使选取区域变大或变小。接着您可以使用一个操作符对选中文本进行操作。例如，按 d 键会删除选中的文本内容。**
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第五讲第四节：提取和合并文件</h3>
 
 
@@ -544,7 +544,7 @@ tags: [Tools,Editor,VIM]
 **提示：您还可以读取外部命令的输出。例如， `:r !ls` 可以读取 ls 命令的输出，并把它放置在光标下面。**
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第五讲小结</h3>
 
 1. `:!command` 用于执行一个外部命令 command。请看一些实际例子：
@@ -558,7 +558,7 @@ tags: [Tools,Editor,VIM]
 5. `:r !dir` 可以读取 dir 命令的输出并将其放置到当前文件的光标位置后面。
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第六讲第一节：打开类命令</h3>
 
 
@@ -574,7 +574,7 @@ tags: [Tools,Editor,VIM]
 ---> Open up a line above this by typing O while the cursor is on this line.
 ```
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第六讲第二节：附加类命令</h3>
 
 
@@ -595,7 +595,7 @@ tags: [Tools,Editor,VIM]
 **提示：a、i 和 A 都会带您进入插入模式，惟一的区别在于字符插入的位置。**
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第六讲第三节：另外一个置换类命令的版本</h3>
 
 
@@ -613,7 +613,7 @@ tags: [Tools,Editor,VIM]
 
 **提示：替换模式与插入模式相似，不过每个输入的字符都会删除一个已有的字符。**
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第六讲第四节：复制粘贴文本</h3>
 
 
@@ -633,7 +633,7 @@ tags: [Tools,Editor,VIM]
 
 提示：您还可以把 `y` 当作操作符来使用；例如 `yw` 可以用来复制一个单词。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第六讲第五节：设置类命令的选项</h3>
 
 
@@ -650,7 +650,7 @@ tags: [Tools,Editor,VIM]
 
 **提示：如果您想要仅在一次查找时忽略字母大小写，您可以使用 `\c`。输入：`：/ignore\c` <回车>**
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第六讲小结</h3>
 
 1. 打开新的一行
@@ -668,7 +668,7 @@ tags: [Tools,Editor,VIM]
    - 'hls' 'hlsearch'    高亮显示所有的匹配短语
 7. 在选项前加上 no 可以关闭选项：  `:set noic`
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第七讲第一节：获取帮助信息</h3>
 
 
@@ -690,7 +690,7 @@ Vim 拥有一个细致全面的在线帮助系统。要启动该帮助系统，�
 - :help user-manual
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第七讲第二节：创建启动脚本</h3>
 
 
@@ -706,7 +706,7 @@ Vim 的功能特性要比 Vi 多得多，但其中大部分都没有缺省启用
 
 下次您启动 Vim 时，编辑器就会有了语法高亮的功能。您可以把您喜欢的各种设置添加到这个 vimrc 文件中。要了解更多信息请输入 `:help vimrc-intro`
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第七讲第三节：补全功能</h3>
 
 
@@ -722,7 +722,7 @@ Vim 的功能特性要比 Vi 多得多，但其中大部分都没有缺省启用
 
 **提示：补全对于许多命令都有效。您只需尝试按 `CTRL-D` 和 `<TAB>`。 它对于 `:help` 命令非常有用。**
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title">第七讲小结</h3>
 
 1. 输入 :help 或者按 <F1> 键或 <Help> 键可以打开帮助窗口。
@@ -734,7 +734,7 @@ Vim 的功能特性要比 Vi 多得多，但其中大部分都没有缺省启用
 
 
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 <h3 class="vim-title"></h3>
 vim 教程到此就结束了。本教程只是为了简明地介绍一下 Vim 编辑器，但已足以让您很容易使用这个编辑器了。毋庸质疑，vim还有很多很多的命令，本教程所介绍的距离完整的差得很远。所以您要精通的话，还望继续努力哦。下一步您可以阅读 Vim 的用户手册，使用的命令是： `:help user-manual`
 
@@ -770,7 +770,7 @@ vim 教程到此就结束了。本教程只是为了简明地介绍一下 Vim �
 - 2002年03月18日 梁昌泰 <linuxrat@gnuchina.org> 根据Bram Moolenaar先生在2002年03月16日的来信要求，将vimtutor1.4中译 版升级到vimtutor1.5。
 - 2001年11月15日 梁昌泰 <linuxrat@gnuchina.org> 将vimtutor1.4中译版提交给Bram Moolenaar和Sven Guckes。
 
-<div class=".border-wave"></div>
+<div class="border-wave"></div>
 ```
 
 若想深入学习，可关注下方公号，回复 `VIM` 获取中文电子书：《VIM 使用实战技巧》。
