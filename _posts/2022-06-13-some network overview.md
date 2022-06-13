@@ -25,3 +25,9 @@ CNAME 最常见应用场景是在：CDN 中的使用（参考：[CDN 工作原�
 ![cname demo for cdn](/images/pig/dig-domain-show-cname.png)
 
 ![CDN 工作原理](https://support.huaweicloud.com/productdesc-cdn/zh-cn_image_0000001129063959.png)
+
+推荐两篇文章：
+- [说说为什么要有CNAME](http://www.net-add.com/devops/sre/cdn/3.html) 主要从运维视角说了 CNAME 的优点。
+- [cname的应用场景是什么](https://developer.aliyun.com/ask/2045) 阿里云开发者社区的一个提问，比较适合开发角度来谈这个问题。
+
+> 例如，用户A拥有一个域名为 abc.com 的网站，网站的网页中的链接为 `http://img.abc.com/logo.png`，用户A此时需要将对网站中图片的请求迁移到OSS，并且不想修改任何网页的代码，也就是对外链接不变。
