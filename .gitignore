@@ -3,4 +3,6 @@ _site/
 *.DS_Store
 .idea
 *.swp
+.jekyll-cache/
+Gemfile.lock
 .Trashes
