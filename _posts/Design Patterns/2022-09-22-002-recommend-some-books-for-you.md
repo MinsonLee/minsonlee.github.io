@@ -23,6 +23,12 @@
 11. [Google 开源项目风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/)
 12. [《PHP PSR 标准规范》 | PHP 技术论坛 (learnku.com)](https://learnku.com/docs/psr)
 
+## 评论区中大家提到过的书籍
+
+- 《操作系统导论》据说是最容易入门操作系统的一本书
+- 《软技能-代码之外的生存指南》适合程序员的职场技能书籍
+- 
+
 
 
 ## 曹大：编程军规
