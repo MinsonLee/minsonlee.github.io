@@ -453,3 +453,4 @@ MVC 中的失血模式：数据访问层（Entity + Repository） --> 业务逻�
 - [软件设计之美 (geekbang.org)](https://time.geekbang.org/column/intro/100052601?tab=catalog)
 - [DDD 实战课 (geekbang.org)](https://time.geekbang.org/column/intro/100037301)
 - [阿里、京东基于DDD的架构设计与最佳实践-基于 DDD 的应用架构设计和实践 (geekbang.org)](https://u.geekbang.org/lesson/285?article=463741)
+- [DDD 101 — The 5-Minute Tour. I like crazy challenges. | by Gérald Croës | The Coding Matrix | Medium](https://medium.com/the-coding-matrix/ddd-101-the-5-minute-tour-7a3037cf53b8)
