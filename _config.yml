@@ -10,9 +10,14 @@ url: "https://minsonlee.github.io"
 officialAccounts: "新猿呓码"
 
 # Comment
-#comment:
-#    disqus: leopard
-    # uyan: 2143225  # 有言id,登录有言官网申请
+comments:
+  active: giscus
+  giscus:
+    repo: MinsonLee/minsonlee.github.io
+    repo_id: MDEwOlJlcG9zaXRvcnkxMjk2NzE3MjA=
+    category: Comments
+    category_id: DIC_kwDOB7qiKM4CtAgg
+    mapping: pathname
 
 # Social
 social:
