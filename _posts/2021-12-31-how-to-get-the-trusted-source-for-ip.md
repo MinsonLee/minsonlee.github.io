@@ -22,7 +22,7 @@ tags: [网络]
 
 ## 国内出口查询：
 
-- 网站：[ipw.cn/](https://ipw.cn/)、[ip138.com/](https://www.ip138.com/) 、 [cip.cc/](http://www.cip.cc/)、[IPIP](https://www.ipip.net/myip.html)
+- 网站：[ipw.cn/](https://ipw.cn/)、[ip138.com/](https://www.ip138.com/) 、 [cip.cc/](http://www.cip.cc/)、[IPIP](https://www.ipip.net/myip.html)、[IP数据云](https://www.ipdatacloud.com/)
 
 ```shell
 lms@LMS:~$ curl cip.cc
