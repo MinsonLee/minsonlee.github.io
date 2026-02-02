@@ -20,5 +20,13 @@ layout: default
   </section>
 </article>
 
+<script type="text/javascript">
+  // 将 a 标签全部定义为新开一个标签页打开
+  document.querySelectorAll('article a[href^="http"]').forEach(link => {
+    link.setAttribute('target', '__blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  })
+</script>
+
 {% include reward.html %}
 {% include comments.html %}
