@@ -1,0 +1,6 @@
+- https://davytw.pixnet.net/blog
+- https://www.englishclub.com/
+- https://www.oxfordonlineenglish.com/going-shopping-in-english
+- https://www.engvid.com/
+- https://en.wiktionary.org/wiki/Appendix:1000_basic_English_words
+- https://www.youtube.com/watch?v=tL3qPUvumeI

@@ -1,0 +1,13 @@
+1. 通过"Windows 身份验证"免密登录，点击连接
+
+![image](243EEEED1DE54EECA167C0FFF8E8A9C3)
+
+2. 找到：安全性》登录名》sa》右键"属性，进行修改密码
+
+![image](DDAD4791FC984EF7AA476ABED0D18E4D)
+
+3. 切换为 `SQL Server 身份验证`
+
+![image](F97CFE4CEAFA44399BF890156D090ED8)
+
+![image](B83510CEFCCC41D1AB38047A693BD25B)

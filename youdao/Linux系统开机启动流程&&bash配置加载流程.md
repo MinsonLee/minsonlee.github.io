@@ -1,0 +1,4 @@
+- https://www.junmajinlong.com/linux/boot_process_bios_mbr/
+- https://www.ruanyifeng.com/blog/2013/08/linux_boot_process.html
+- https://www.cnblogs.com/f-ck-need-u/p/7417651.html
+- https://www.panyanbin.com/article/953d57da.html

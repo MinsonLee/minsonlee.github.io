@@ -1,0 +1,11 @@
+- Moebius 集群介绍-一站式 SQL 集群工具：https://www.cnblogs.com/MuNet/p/5762020.html
+- MSSQL · 最佳实践 · SQL Server三种常见备份：http://mysql.taobao.org/monthly/2017/11/03/?spm=a2c6h.12873639.0.0.421612d7PQiWHy
+- MSSQL · 最佳实践 · SQL Server备份策略：https://developer.aliyun.com/article/379022
+- sqlserver数据库大型应用解决方案总结：https://www.cnblogs.com/gered/p/10929007.html
+- SQL Server主从数据库同步方式及同步问题解决方案总结：https://www.cnblogs.com/zhaow/articles/9481376.html
+- SQL Server学习视频：https://www.jikexueyuan.com/course/sqlserver/ 
+- sqlserver日志文件太大解决方法：https://www.gagahappy.com/sqlserver-log-too-big/
+- 为什么 SQLSERVER CPU占用过高 CPU达到100%：https://www.donet5.com/ask/11/1072
+- SQLServer无法删除登录名 '******'，因为该用户当前正处于登录状态：https://www.cnblogs.com/Sungeek/p/10302062.html
+- 密码有效性验证失败。该密码不够复杂，不符合 Windows 策略要求：https://www.cnblogs.com/weipeng/archive/2012/11/01/2749844.html
+- 数据库迁移必备--迁移登录账户：https://blog.csdn.net/z10843087/article/details/78769963

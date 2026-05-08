@@ -1,0 +1,3 @@
+- [Rust 数据结构与算法](https://github.com/QMHTMY/RustBook)
+- [Rust入门秘籍](https://rust-book.junmajinlong.com/about.html)
+- [The Rust Programming Language](https://doc.rust-lang.org/book/)

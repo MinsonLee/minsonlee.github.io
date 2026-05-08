@@ -1,0 +1,9 @@
+- `grep -E "<reg>"` 正则匹配(贪婪模式)
+- `grep -P "<reg>"` 使用 Perl 语法进行正则，如果需要非贪婪模式需要在量词后加 ?，如`.*` 改为 `.*?` 
+- `grep -V "<reg>"` 反向匹配
+- `grep -C <num> "<reg>"` 匹配对应的行且显示前后<num>行内容
+- `grep -A <num> "<reg>"` 匹配对应的行且显示后<num>行内容
+- `grep -B <num> "<reg>"` 匹配对应的行且显示前<num>行内容
+- `grep -r "<reg>" [dir/file]` 递归匹配指定目录/文件所有行
+- `grep -rin "COMMIT_EDITMSG" --exclude-dir={t,Documentation} --exclude "*.perl" --exclude ".editorconfig" ./` 递归匹配并排除 t,Documentation 两个目录，排除 *.perl、.editorconfig 格式文件
+- `grep -r "/erc-tools.git" --include="composer.json"` 递归查询，指定查询格式文件

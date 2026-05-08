@@ -1,0 +1,4 @@
+- 一个自动检查更正 Shell 脚本的工具网站：https://www.shellcheck.net/
+- Shell 实例：https://geek-docs.com/shell/shell-examples/the-shell-uses-cut-to-shard-files-by-column.html
+- shell字符串操作awk|cut|sed ： https://www.yoyoask.com/?p=957
+- Linux三剑客之awk实战精讲 https://developer.aliyun.com/article/560698

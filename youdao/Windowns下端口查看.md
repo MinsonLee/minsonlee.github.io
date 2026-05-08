@@ -1,0 +1,2 @@
+- 查看端口：netstat -ano|findstr xxx
+- 根据pid杀死进程：taskkill /f /pid  6764

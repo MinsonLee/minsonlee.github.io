@@ -1,0 +1,2 @@
+- 自定义异常 https://www.liaoxuefeng.com/wiki/1252599548343744/1264737765214592
+- 为什么不建议用try catch处理异常？ https://mp.weixin.qq.com/s/R2MRn_Vj2Jdq2aN9Hs0AIQ

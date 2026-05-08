@@ -1,0 +1,2 @@
+- 强大的strace命令用法详解:https://www.linuxidc.com/Linux/2018-01/150654.htm
+- 神器之strace:https://www.jianshu.com/p/33521124bdf2
