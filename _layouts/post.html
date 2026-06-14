@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  <section id="post_body" class="post">
+    {{ content }}
+
+  </section>
+</article>
+
+<script type="text/javascript">
+  // 将 a 标签全部定义为新开一个标签页打开
+  document.querySelectorAll('article a[href^="http"]').forEach(link => {
+    link.setAttribute('target', '__blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  })
+</script>
+
+{% include reward.html %}
+{% include comments.html %}

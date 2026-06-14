@@ -1,0 +1,112 @@
+# Basic
+title: MinsonLee's Blog
+subtitle: WebSite
+description: Welcome To My WebSite !
+# 头像里面的标题
+avatarTitle: Minson
+# 头像里面的描述
+avatarDesc: PHP / Git
+url: "https://minsonlee.github.io"
+officialAccounts: "新猿呓码"
+
+# Comment
+comments:
+  active: giscus
+  giscus:
+    repo: MinsonLee/minsonlee.github.io
+    repo_id: MDEwOlJlcG9zaXRvcnkxMjk2NzE3MjA=
+    category: Comments
+    category_id: DIC_kwDOB7qiKM4CtAgg
+    mapping: pathname
+
+# Social
+social:
+    weibo: 2434729284 
+    github: MinsonLee
+    twitter: lms.minsonlee@gmail.com
+    mail: lms.minsonlee@gmail.com
+
+# 百度统计 
+# 使用博客模板请去掉或者更换 id 
+#baidu:
+#    id: 8ba1c6be0953b6f9c2ba38e57f615421  
+
+# Google Analytics
+# 使用博客模板请去掉或者更换 id
+#ga:
+#    id: UA-84134159-3   
+#    host: auto  
+
+############################################################
+# Site configuration for the WebP Generator Plugin
+# The values here represent the defaults if nothing is set
+webp:
+  enabled: true
+  
+  # The quality of the webp conversion 0 to 100 (where 100 is least lossy)
+  quality: 75
+
+  # List of directories containing images to optimize, nested directories will only be checked if `nested` is true
+  # By default the generator will search for a folder called `/img` under the site root and process all jpg, png and tiff image files found there.
+  img_dir: ["/images"]
+
+  # Whether to search in nested directories or not
+  nested: false
+
+  # add ".gif" to the format list to generate webp for animated gifs as well
+  formats: [".jpeg", ".jpg", ".png", ".tiff"]
+
+  # File extensions for animated gif files 
+  gifs: [".gif"]
+
+  # Set to true to always regenerate existing webp files
+  regenerate: false
+
+  # Local path to the WebP utilities to use (relative or absolute)
+  # Omit or leave as nil to use the utilities shipped with the gem, override only to use your local install
+  webp_path: nil
+
+  # List of files or directories to exclude
+  # e.g. custom or hand generated webp conversion files
+  exclude: []
+
+  # append '.webp' to filename after original extension rather than replacing it.
+  # Default transforms `image.png` to `image.webp`, while changing to true transforms `image.png` to `image.png.webp`
+  append_ext: false
+############################################################
+
+# 《----------------- 上面的信息修改成你自己的 ---------------------------》
+#
+#
+#  _post/ 下的文章更换成你自己的文章
+#  帮忙star一下，感谢~😆 地址： https://github.com/leopardpan/leopardpan.github.io
+#
+#
+# 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
+
+
+permalink: /:year/:month/:title
+# Format
+highlighter: rouge
+
+textColor: #FF0000
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: clear
+
+# The blog button should not be removed.
+blog_button:
+    title: HomePage
+
+# Navigation buttons in the front page.s
+nav:
+    - {title: Article, description: archive, url: '/archive'}   
+    - {title: Tags, description: tags, url: '/tags'}      
+    - {title: About Me, description: about, url: '/about'}      
+    
+
+# Pagination
+gems: [jekyll-paginate,jekyll-sitemap]
+paginate: 20
+paginate_path: "page/:num"
+

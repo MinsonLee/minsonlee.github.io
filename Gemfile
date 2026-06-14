@@ -1,0 +1,6 @@
+source 'https://mirrors.tuna.tsinghua.edu.cn/rubygems'
+gem 'jekyll'
+gem 'redcarpet'
+gem 'jekyll-paginate'
+gem 'jekyll-sitemap'
+gem 'jekyll-webp'
