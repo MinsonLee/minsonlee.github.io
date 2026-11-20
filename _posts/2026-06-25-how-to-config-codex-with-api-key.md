@@ -1,4 +1,11 @@
-# Codex CLI 使用 API Key 与多模型 Provider 配置指南
+---
+layout: post
+title: "Codex CLI 使用 API Key 与多模型 Provider 配置指南"
+date: 2026-06-25
+tags: [AI, Codex]
+---
+
+# 
 
 本文整理了两个问题：
 
