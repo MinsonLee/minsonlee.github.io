@@ -224,3 +224,73 @@ pnpm runtime set node lts -g
 ```
 
 `fnm` 负责专业的多版本管理，`pnpm` 则替代 `npm` 完成专业的包管理。
+
+
+### 测试
+- 创建用户组：sudo groupadd -f nodejs
+- 创建用户并加入用户组：sudo useradd -m -g nodejs -G nodejs nodejs1
+- 设置登录密码：sudo passwd nodejs1
+- 创建共享目录并设置权限: sudo install -d -o root -g nodejs -m 2775 "/apps/fnm"
+- 初始化共享目录：
+```sh
+sudo chgrp -R nodejs /apps/fnm
+sudo chmod -R g+rwX /apps/fnm
+sudo find /apps/fnm -type d -exec chmod g+s {} +
+```
+- 设置全局 `FNM_DIR`:
+```sh
+sudo tee /etc/profile.d/fnm.sh >/dev/null <<'EOF'
+export FNM_DIR="/apps/fnm"
+EOF
+```
+- 配置 Bash 自动加载 fnm,配置 `/etc/bash.bashrc`
+```bash
+# fnm shared configuration
+export FNM_DIR="/apps/fnm"
+
+# Initialize fnm for interactive shells
+if [[ $- == *i* ]] && command -v fnm >/dev/null 2>&1; then
+    eval "$(fnm env --use-on-cd --shell bash)"
+fi
+```
+- 安装 fnm : `curl -fsSL https://fnm.vercel.app/install | sudo bash -s -- --install-dir /usr/local/bin --skip-shell`
+- 禁止使用 `sudo fnm` 执行，避免 `sudo fnm install` 安装 Node.js 造成共享目录下文件归属和权限混乱
+
+新建 `/usr/local/bin/fnm`，然后 `sudo chmod 755 /usr/local/bin/fnm` 权限：
+
+```bash
+#!/usr/bin/env bash
+
+if [[ "$EUID" -eq 0 ]]; then
+    echo "Error: Do not run fnm as root."
+    echo "Please run fnm as a normal user."
+    exit 1
+fi
+
+exec /apps/fnm/fnm "$@"
+```
+
+- 命令：
+       - which fnm
+       - fnm --version
+       - fnm install 24
+       - fnm list
+       - fnm use 24
+- 处理不同用户的默认版本，不要使用共享的 `fnm default 22`,而是每个用户在自己的 ~/.bashrc 中设置默认版本，如：`fnm use 24 --silent-if-unchanged`
+- 如果是项目级版本，则通过 `.node-version` 和 `.nvmrc` 控制
+
+!!! pnpm 方式多个用户共享可写目录会带来权限、配置隔离和安全问题，如果为每个单独版本用户设置不同的 `PNPM_HOME` 则会造成版本相同时，磁盘空间的重复占用。两者选其一...但是真的需要这么复杂吗？？
+
+此时：fnm 则会更加方便。
+
+```
+/apps/fnm/
+   node-versions/
+      v20.x.x/
+      v22.x.x/
+      v24.x.x/
+   aliases/
+      default → v22.x.x
+```
+
+最终：个人开发，使用 fnm + pnpm
